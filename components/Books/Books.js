@@ -4,7 +4,10 @@ import { FaHeart } from 'react-icons/fa';
 
 const Books = ({ book }) => {
 	return (
-		<div key={book.id} className='mx-auto rounded-md shadow-md overflow-hidden'>
+		<div
+			key={book.id}
+			className='mx-auto rounded-md shadow-md overflow-hidden w-60 md:w-full'
+		>
 			<div className='md:flex h-auto md:h-48'>
 				<div className='flex sm:flex-shrink-0 justify-center'>
 					<img
