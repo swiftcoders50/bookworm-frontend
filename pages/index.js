@@ -1,9 +1,12 @@
 import Head from "next/head";
+import Header from "../components/Navbar/Header";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Home() {
   return (
     <div>
-      <h1>hello</h1>
+      {/* <Navbar /> */}
+      <Header />
     </div>
   );
 }
