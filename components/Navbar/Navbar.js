@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <div className={`${navbarClasses.join("")}`}>
-        <nav className="flex items-center bg-gray-200 p-3 flex-wrap lg:px-20">
+        <nav className="flex items-center bg-gray-200 p-3 flex-wrap lg:px-20 ">
           <a href="#" className="p-2 mr-4 inline-flex items-center">
             <svg
               viewBox="0 0 24 24"
