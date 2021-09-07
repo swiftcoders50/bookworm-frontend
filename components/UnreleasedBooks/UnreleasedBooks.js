@@ -1,8 +1,8 @@
 import React from 'react';
-import Books from '../Books/Books';
 import Link from 'next/link';
+import UnreleasedBookCarousel from '../UnreleasedBookCarousel/UnreleasedBookCarousel';
 
-const BestSeller = () => {
+const UnreleasedBooks = () => {
 	// demo array of books
 	const bestBooks = [
 		{
@@ -51,37 +51,25 @@ const BestSeller = () => {
 	];
 
 	return (
-		// best seller container
-		<div className='mx-2 sm:mx-4 md:mx-16'>
-			<div className='flex justify-between my-8 border-b border-gray-200'>
-				<h1 className='text-2xl md:text-3xl font-semibold text-indigo-900'>
-					Best Seller Books
-				</h1>
-				<Link href='/'>
-					<a className='text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-semibold'>
-						View All
-					</a>
-				</Link>
+		<div className='my-20'>
+			<div className='mx-2 sm:mx-4 md:mx-16'>
+				<div className='flex justify-between my-8 border-b border-gray-200'>
+					<h1 className='text-2xl md:text-3xl font-semibold text-indigo-900'>
+						Unreleased Books
+					</h1>
+					<Link href='/'>
+						<a className='text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-semibold'>
+							View All
+						</a>
+					</Link>
+				</div>
 			</div>
-
-			{/* best seller Cart container */}
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4 cursor-pointer'>
-				{/* cart */}
-				{bestBooks.map((book) => (
-					<Books key={book.id} book={book} />
-				))}
-			</div>
-
-			{/* load more button */}
-			<div className='mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8'>
-				<Link href='/'>
-					<a className='text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold '>
-						More Best seller books
-					</a>
-				</Link>
+			{/* unreleased books carousel */}
+			<div className='bg-indigo-900 p-16'>
+				<UnreleasedBookCarousel bestBooks={bestBooks} />
 			</div>
 		</div>
 	);
 };
 
-export default BestSeller;
+export default UnreleasedBooks;
