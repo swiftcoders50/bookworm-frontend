@@ -1,7 +1,6 @@
 import Head from "next/head";
 import BestSeller from "../components/BestSeller/BestSeller";
 import Blogs from "../components/Blogs/Blogs";
-import UnreleasedBooks from "../components/UnreleasedBooks/UnreleasedBooks";
 import Categories from "../components/Categories";
 import Authors from "../components/Authors/Authors";
 import UnreleasedBooks from "../components/UnreleasedBooks/UnreleasedBooks";
@@ -22,9 +21,6 @@ export default function Home() {
 
       {/* samiha */}
       <Categories />
-
-      {/* opu */}
-      <UnreleasedBooks />
 
       {/* apel */}
       <UnreleasedBooks />
