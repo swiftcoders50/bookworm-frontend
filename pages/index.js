@@ -26,9 +26,6 @@ export default function Home() {
       {/* opu */}
       <ForeignBooks />
 
-      {/* opu */}
-      <UnreleasedBooks />
-
       {/* apel */}
       <UnreleasedBooks />
 
