@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Navbar from "../components/Navbar/Navbar";
+import Partnered from "../components/Partnered/Partnered";
 import BestSeller from "../components/BestSeller/BestSeller";
 import Blogs from "../components/Blogs/Blogs";
 import Categories from "../components/Categories";
@@ -13,6 +15,9 @@ export default function Home() {
         <title>Bookworm</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* jahid */}
+      <Navbar />
+
       {/* samiha */}
       <TopRatedCarousel></TopRatedCarousel>
 
