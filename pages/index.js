@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import BestSeller from '../components/BestSeller/BestSeller';
+import Blogs from '../components/Blogs/Blogs';
 import UnreleasedBooks from '../components/UnreleasedBooks/UnreleasedBooks';
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
 			<BestSeller />
 			{/* Unreleased books carousel component */}
 			<UnreleasedBooks />
+			<Blogs/>
 		</div>
 	);
 }
