@@ -19,7 +19,7 @@ const Header = () => {
       {/* flex items-center bg-gray-200 p-3 flex-wrap lg:px-20 */}
 
       <nav
-        className={`fixed w-full flex items-center p-3 flex-wrap lg:px-20 ${
+        className={`sm:h-auto fixed w-full flex items-center p-3 flex-wrap lg:px-20 ${
           navbar ? "bg-blue-300" : "bg-gray-200"
         }`}
       >
@@ -90,6 +90,48 @@ const Header = () => {
                 </span>
               </div>
             </a>
+
+            {/* this is dropdown */}
+            <div class="group inline-block relative">
+              <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white">
+                <span class="mr-1">Categories</span>
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                </svg>
+              </div>
+              <ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                <li class="">
+                  <a
+                    class="rounded-t bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    href="#"
+                  >
+                    Story books
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    class="bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    href="#"
+                  >
+                    Nobel books
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    class="rounded-b bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    href="#"
+                  >
+                    Text books
+                  </a>
+                </li>
+              </ul>
+            </div>
+            {/* end of dropdown */}
+
             <a
               href="#"
               className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white"
@@ -102,7 +144,6 @@ const Header = () => {
             >
               <span>Contact</span>
             </a>
-
             <a
               href="#"
               // className="lg:inline-flex lg:w-auto w-10 px-6 text-gray-800 rounded-full   cursor-pointer tracking-wider bg-red-400 border-2 hover:bg-red-500 hover:text-white items-center  p-2 font-bold"
