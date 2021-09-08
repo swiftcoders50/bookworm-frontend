@@ -74,7 +74,7 @@ const Header = () => {
             >
               <div className="flex">
                 <span>Categories</span>
-                <span>
+                {/* <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-5"
@@ -87,12 +87,12 @@ const Header = () => {
                       clip-rule="evenodd"
                     />
                   </svg>
-                </span>
+                </span> */}
               </div>
             </a>
 
             {/* this is dropdown */}
-            <div class="group inline-block relative">
+            {/* <div class="group inline-block relative">
               <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white">
                 <span class="mr-1">Categories</span>
                 <svg
@@ -129,7 +129,7 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             {/* end of dropdown */}
 
             <a
