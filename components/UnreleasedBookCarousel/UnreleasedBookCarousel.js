@@ -49,7 +49,7 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
 			<Slider {...settings}>
 				{bestBooks.map((book) => (
 					<Link href='/' key={book.id}>
-						<a>
+						<a className='mx-2 inline-block'>
 							<Image
 								src={book.img}
 								width='180'

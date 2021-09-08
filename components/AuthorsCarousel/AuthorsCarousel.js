@@ -49,7 +49,7 @@ const AuthorsCarousel = ({ authors }) => {
 			<Slider {...settings}>
 				{authors.map((author) => (
 					<Link key={author.id} href='/'>
-						<a className='border-2 border-gray-200 rounded-full inline-block h-48 w-48 overflow-hidden'>
+						<a className='mx-2 border-2 border-indigo-400 rounded-full inline-block h-32 w-32 md:h-48 md:w-48 overflow-hidden'>
 							<Image
 								src={author.img}
 								alt='author name'

@@ -34,7 +34,7 @@ const Authors = () => {
 		<div className='my-20'>
 			<div className='mx-2 sm:mx-4 md:mx-16'>
 				<div className='flex justify-between my-8 border-b border-gray-200'>
-					<h1 className='text-2xl md:text-3xl font-semibold text-indigo-900'>
+					<h1 className='text-xl md:text-3xl font-semibold text-indigo-900'>
 						Weekly Top Authors
 					</h1>
 					<Link href='/'>
@@ -45,7 +45,7 @@ const Authors = () => {
 				</div>
 			</div>
 			{/* authors carousel */}
-			<div className='bg-indigo-900 p-16'>
+			<div className='bg-gray-200 p-16'>
 				<AuthorsCarousel authors={authors} />
 			</div>
 		</div>
