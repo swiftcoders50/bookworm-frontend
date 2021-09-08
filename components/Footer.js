@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
                     <hr className="mt-8"/>
                     <div className=" mb-4 mt-4 text-center">
-                        <p className="text-gray-300"><b>@2021 | Swift Coders</b></p>
+                        <p className="text-gray-300"><b>&copy; 2021 | Swift Coders</b></p>
                     </div>
                 </div>
             </div>
