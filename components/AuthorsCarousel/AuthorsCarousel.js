@@ -7,7 +7,7 @@ import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const UnreleasedBookCarousel = ({ bestBooks }) => {
+const AuthorsCarousel = ({ authors }) => {
   // carousel settings
   const settings = {
     dots: true,
@@ -47,15 +47,16 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
   return (
     <div className="text-center">
       <Slider {...settings}>
-        {bestBooks.map((book) => (
-          <Link href="/" key={book.id}>
-            <a className="mx-2 inline-block">
+        {authors.map((author) => (
+          <Link key={author.id} href="/">
+            <a className="mx-2 border-2 border-indigo-400 rounded-full inline-block h-32 w-32 md:h-48 md:w-48 overflow-hidden">
               <Image
-                src={book.img}
-                width="180"
-                height="215"
+                src={author.img}
+                alt="author name"
+                height={100}
+                width={100}
+                layout="responsive"
                 objectFit="cover"
-                alt="book name"
               />
             </a>
           </Link>
@@ -65,4 +66,4 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
   );
 };
 
-export default UnreleasedBookCarousel;
+export default AuthorsCarousel;
