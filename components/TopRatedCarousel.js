@@ -1,63 +1,63 @@
 // samiha
 
-import Image from 'next/image';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const TopRatedCarousel = () => {
 
-	// Next carousel button
-	function SampleNextArrow(props) {
-		const { className, style, onClick } = props;
-		return (
-			<div
-				className={className}
-				style={{
-					...style,
-					display: 'block',
-					background: 'red',
-					right: '3%',
-					borderRadius: '100%',
-					zIndex: 1,
-				}}
-				onClick={onClick}
-			/>
-		);
-	}
-	// Previous carousel button
-	function SamplePrevArrow(props) {
-		const { className, style, onClick } = props;
-		return (
-			<div
-				className={className}
-				style={{
-					...style,
-					display: 'block',
-					background: 'red',
-					left: '3%',
-					borderRadius: '100%',
-					zIndex: 1,
-				}}
-				onClick={onClick}
-			/>
-		);
-	}
+  // Next carousel button
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          background: "red",
+          right: "3%",
+          borderRadius: "100%",
+          zIndex: 1,
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+  // Previous carousel button
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          background: "red",
+          left: "3%",
+          borderRadius: "100%",
+          zIndex: 1,
+        }}
+        onClick={onClick}
+      />
+    );
+  }
 
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 2000,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: true,
-		autoplay: true,
-		autoplaySpeed: 3500,
-		cssEase: 'linear',
-		pauseOnHover: true,
-		nextArrow: <SampleNextArrow />,
-		prevArrow: <SamplePrevArrow />,
-	};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+    pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
 	return (
 		<Slider {...settings}>
