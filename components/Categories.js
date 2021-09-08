@@ -8,8 +8,8 @@ const Categories = () => {
       {/* business-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-300 flex justify-center items-center rounded-full">
-            <FaBusinessTime className="text-4xl" />
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+            <FaBusinessTime className="text-4xl text-white" />
           </div>
         </div>
         <div className="business-card-content text-center">
@@ -20,8 +20,8 @@ const Categories = () => {
       {/* self-improvement-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-300 flex justify-center items-center rounded-full">
-            <GiCutDiamond className="text-4xl" />
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+            <GiCutDiamond className="text-4xl text-white" />
           </div>
         </div>
         <div className="self-improvement-card-content text-center">
@@ -32,8 +32,8 @@ const Categories = () => {
       {/* novel-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-300 flex justify-center items-center rounded-full">
-            <FaBookOpen className="text-4xl" />
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+            <FaBookOpen className="text-4xl text-white" />
           </div>
         </div>
         <div className="novel-card-content text-center">
@@ -44,8 +44,8 @@ const Categories = () => {
       {/* skill-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-300 flex justify-center items-center rounded-full">
-            <GiSkills className="text-4xl" />
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+            <GiSkills className="text-4xl text-white" />
           </div>
         </div>
         <div className="skill-card-content text-center">
