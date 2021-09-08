@@ -19,7 +19,7 @@ const Header = () => {
       {/* flex items-center bg-gray-200 p-3 flex-wrap lg:px-20 */}
 
       <nav
-        className={`sm:h-auto fixed w-full flex items-center p-3 flex-wrap lg:px-20 ${
+        className={`fixed w-full flex items-center p-3 flex-wrap lg:px-20 ${
           navbar ? "bg-blue-300" : "bg-gray-200"
         }`}
       >
