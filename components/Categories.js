@@ -8,7 +8,7 @@ const Categories = () => {
       {/* business-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
             <FaBusinessTime className="text-4xl text-white" />
           </div>
         </div>
@@ -20,7 +20,7 @@ const Categories = () => {
       {/* self-improvement-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
             <GiCutDiamond className="text-4xl text-white" />
           </div>
         </div>
@@ -32,7 +32,7 @@ const Categories = () => {
       {/* novel-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
             <FaBookOpen className="text-4xl text-white" />
           </div>
         </div>
@@ -44,7 +44,7 @@ const Categories = () => {
       {/* skill-card */}
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-red-600 flex justify-center items-center rounded-full">
+          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
             <GiSkills className="text-4xl text-white" />
           </div>
         </div>
