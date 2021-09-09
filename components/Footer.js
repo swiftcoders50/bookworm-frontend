@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="mx-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         <div className="mb-4">
-                            <h4><strong><span className="text-xl text-gray-200">BOOKWORM</span></strong></h4><br/>
+                            <h4><strong><span className="text-xl text-gray-300">BOOKWORM</span></strong></h4><br/>
                             1203 Town Center<br/>
                             Drive FL 33458 BD<br/><br/>
                             <strong>+0000 123 456 789</strong><br/>
