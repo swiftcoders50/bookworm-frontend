@@ -1,11 +1,11 @@
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import Link from "next/link";
 
 // Import css files for react-slick carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const AuthorsCarousel = ({ authors }) => {
 	// carousel settings
@@ -45,18 +45,18 @@ const AuthorsCarousel = ({ authors }) => {
 	};
 
 	return (
-		<div className='text-center'>
+		<div className="text-center">
 			<Slider {...settings}>
 				{authors.map((author) => (
-					<Link key={author.id} href='/'>
-						<a className='mx-2 border-2 border-indigo-400 rounded-full inline-block h-32 w-32 md:h-48 md:w-48 overflow-hidden'>
+					<Link key={author.id} href="/">
+						<a className="mx-2 border-2 border-indigo-400 rounded-full inline-block h-32 w-32 md:h-48 md:w-48 overflow-hidden">
 							<Image
 								src={author.img}
-								alt='author name'
+								alt="author name"
 								height={100}
 								width={100}
-								layout='responsive'
-								objectFit='cover'
+								layout="responsive"
+								objectFit="cover"
 							/>
 						</a>
 					</Link>

@@ -1,11 +1,11 @@
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import Link from "next/link";
 
 // Import css files for react-slick carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const UnreleasedBookCarousel = ({ bestBooks }) => {
 	// carousel settings
@@ -45,17 +45,17 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
 	};
 
 	return (
-		<div className='text-center'>
+		<div className="text-center">
 			<Slider {...settings}>
 				{bestBooks.map((book) => (
-					<Link href='/' key={book.id}>
-						<a className='mx-2 inline-block'>
+					<Link href="/" key={book.id}>
+						<a className="mx-2 inline-block">
 							<Image
 								src={book.img}
-								width='180'
-								height='215'
-								objectFit='cover'
-								alt='book name'
+								width="180"
+								height="215"
+								objectFit="cover"
+								alt="book name"
 							/>
 						</a>
 					</Link>
