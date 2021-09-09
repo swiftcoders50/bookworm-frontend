@@ -44,6 +44,7 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
     ],
   };
 
+<<<<<<< HEAD
   return (
     <div className="text-center">
       <Slider {...settings}>
@@ -63,6 +64,27 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
       </Slider>
     </div>
   );
+=======
+	return (
+		<div className="text-center">
+			<Slider {...settings}>
+				{bestBooks.map((book) => (
+					<Link href="/" key={book.id}>
+						<a className="mx-2 inline-block">
+							<Image
+								src={book.img}
+								width="180"
+								height="215"
+								objectFit="cover"
+								alt="book name"
+							/>
+						</a>
+					</Link>
+				))}
+			</Slider>
+		</div>
+	);
+>>>>>>> apel-authors-comp
 };
 
 export default UnreleasedBookCarousel;
