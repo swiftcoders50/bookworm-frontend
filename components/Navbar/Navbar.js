@@ -27,11 +27,11 @@ const Header = () => {
           <svg
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-current text-red-500  h-8 w-8 mr-2"
+            className="fill-current text-indigo-900  h-8 w-8 mr-2"
           >
             <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
           </svg>
-          <span className="text-xl text-red-500 font-bold uppercase tracking-wide">
+          <span className="text-xl text-indigo-900 font-bold uppercase tracking-wide">
             BOOKWORM
           </span>
         </a>
@@ -64,13 +64,13 @@ const Header = () => {
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
             <a
               href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:bg-red-500 hover:text-white"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:bg-indigo-900 hover:text-white"
             >
               <span>Home</span>
             </a>
             <a
               href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
             >
               <div className="flex">
                 <span>Categories</span>
@@ -93,7 +93,7 @@ const Header = () => {
 
             {/* this is dropdown */}
             {/* <div class="group inline-block relative">
-              <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white">
+              <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
                 <span class="mr-1">Categories</span>
                 <svg
                   class="fill-current h-4 w-4"
@@ -106,7 +106,7 @@ const Header = () => {
               <ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
                 <li class="">
                   <a
-                    class="rounded-t bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    class="rounded-t bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
                     href="#"
                   >
                     Story books
@@ -114,7 +114,7 @@ const Header = () => {
                 </li>
                 <li class="">
                   <a
-                    class="bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    class="bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
                     href="#"
                   >
                     Nobel books
@@ -122,7 +122,7 @@ const Header = () => {
                 </li>
                 <li class="">
                   <a
-                    class="rounded-b bg-gray-200 text-gray-600 hover:hover:bg-red-500 hover:text-white py-3 px-24 block whitespace-no-wrap"
+                    class="rounded-b bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
                     href="#"
                   >
                     Text books
@@ -134,20 +134,20 @@ const Header = () => {
 
             <a
               href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
             >
               <span>Best Sellers</span>
             </a>
             <a
               href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
             >
               <span>Contact</span>
             </a>
             <a
               href="#"
-              // className="lg:inline-flex lg:w-auto w-10 px-6 text-gray-800 rounded-full   cursor-pointer tracking-wider bg-red-400 border-2 hover:bg-red-500 hover:text-white items-center  p-2 font-bold"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-red-500 hover:text-white"
+              // className="lg:inline-flex lg:w-auto w-10 px-6 text-gray-800 rounded-full   cursor-pointer tracking-wider bg-red-400 border-2 hover:bg-indigo-900 hover:text-white items-center  p-2 font-bold"
+              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
             >
               <span>Login</span>
             </a>
