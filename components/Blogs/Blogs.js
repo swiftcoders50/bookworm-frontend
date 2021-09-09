@@ -7,7 +7,7 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "Books changed my ideology",
-			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. Etiam tristique massa at odio interdum, nec vestibulum diam placerat.",
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
 			img: '/assets/blog-images/blog-1.jpg',
 		},
         {
@@ -15,7 +15,7 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "Best writers of 19th century",
-			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. Etiam tristique massa at odio interdum, nec vestibulum diam placerat.",
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
 			img: '/assets/blog-images/blog-2.jpg',
 		},
         {
@@ -23,14 +23,14 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "My favourite books of 2021",
-			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. Etiam tristique massa at odio interdum, nec vestibulum diam placerat.",
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
 			img: '/assets/blog-images/blog-3.jpg',
 		},
     ];
     return (
         <section className="px:10 md:px-20 lg:px-40 pb-20">
 			<div className="flex justify-between">
-				<h2 className="text-3xl">BookWorm Blogs</h2>
+				<h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">Bookworm Blogs</h2>
 				<button className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold">Read all Blogs</button>
 			</div>
 			<div className="py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">

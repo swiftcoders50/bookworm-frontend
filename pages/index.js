@@ -7,6 +7,7 @@ import Authors from "../components/Authors/Authors";
 import TopRatedCarousel from "../components/TopRatedCarousel";
 import ForeignBooks from "./../components/ForeignBooks/ForeignBooks";
 import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -33,11 +34,15 @@ export default function Home() {
       {/* apel */}
       <UnreleasedBooks />
 
+
       {/* opu */}
       <Blogs />
 
       {/* apel */}
       <Authors />
+
+       {/* opu */}
+       <Footer />
     </div>
   );
 }
