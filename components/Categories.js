@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBusinessTime, FaBookOpen } from "react-icons/fa";
-import { GiSkills, GiCutDiamond } from "react-icons/Gi";
+// import { GiSkills, GiCutDiamond } from "react-icons/Gi";
 
 const Categories = () => {
   return (
@@ -21,7 +21,7 @@ const Categories = () => {
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
           <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <GiCutDiamond className="text-4xl text-white" />
+            <FaBookOpen className="text-4xl text-white" />
           </div>
         </div>
         <div className="self-improvement-card-content text-center">
@@ -45,7 +45,7 @@ const Categories = () => {
       <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
         <div className="p-5 flex justify-center items-center">
           <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <GiSkills className="text-4xl text-white" />
+            <FaBookOpen className="text-4xl text-white" />
           </div>
         </div>
         <div className="skill-card-content text-center">
