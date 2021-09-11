@@ -59,7 +59,7 @@ const TopRatedCarousel = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} style={{ paddingTop: "80px" }}>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 my-8 md:mx-12 px-12 gap-x-9">
           <div className="flex justify-center items-center">
