@@ -1,4 +1,4 @@
-import { FaUserAlt, FaRegCalendarAlt } from 'react-icons/fa';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 const Blog = ({blog}) => {
     return (
         <div>
@@ -6,12 +6,10 @@ const Blog = ({blog}) => {
 				src={blog.img}
 				alt={blog.name}
 			/>
-            <div className="flex gap-2">
-            <FaUserAlt className='cursor-pointer' size='1.1rem' color='gray' />
             <h4><b>By {blog.name}</b></h4>
-            </div>
+            
             <div className="flex gap-2">
-            <FaRegCalendarAlt className='cursor-pointer' size='1.1rem' color='gray' />
+            <FaRegCalendarAlt className='mt-1 cursor-pointer' size='1rem' color='gray' />
             <h4>{blog.date}</h4>
             </div>
             <h4 className="text-xl my-3"><b>{blog.title}</b></h4>
