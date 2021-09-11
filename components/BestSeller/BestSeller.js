@@ -55,7 +55,6 @@ const BestSeller = () => {
   const handleBuy = (singleBook) => {
     setCardData([...cartData, singleBook]);
   };
-  console.log(cartData, "this is best seller");
 
   return (
     // best seller container

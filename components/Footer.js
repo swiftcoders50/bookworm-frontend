@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrolledTop from "../components/ScrolledTop/ScrolledTop";
 
 const Footer = () => {
   return (
@@ -129,6 +130,8 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        {/* jahid */}
+        <ScrolledTop />
       </div>
     </footer>
   );
