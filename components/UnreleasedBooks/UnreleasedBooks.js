@@ -65,7 +65,7 @@ const UnreleasedBooks = () => {
         </div>
       </div>
       {/* unreleased books carousel */}
-      <div className="bg-indigo-900 p-16">
+      <div className="p-16">
         <UnreleasedBookCarousel bestBooks={bestBooks} />
       </div>
     </div>
