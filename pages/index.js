@@ -16,9 +16,6 @@ export default function Home() {
         <title>Bookworm</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* jahid */}
-      <Navbar />
-
       {/* samiha */}
       <TopRatedCarousel></TopRatedCarousel>
 
@@ -34,15 +31,11 @@ export default function Home() {
       {/* apel */}
       <UnreleasedBooks />
 
-
       {/* opu */}
       <Blogs />
 
       {/* apel */}
       <Authors />
-
-       {/* opu */}
-       <Footer />
     </div>
   );
 }
