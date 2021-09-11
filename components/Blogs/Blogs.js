@@ -7,7 +7,11 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "Books changed my ideology",
+<<<<<<< HEAD
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante.",
+=======
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
+>>>>>>> 2b616f0db6497020526b450002b5b125b44e09b1
 			img: '/assets/blog-images/blog-1.jpg',
 		},
         {
@@ -15,7 +19,11 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "Best writers of 19th century",
+<<<<<<< HEAD
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante.",
+=======
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
+>>>>>>> 2b616f0db6497020526b450002b5b125b44e09b1
 			img: '/assets/blog-images/blog-2.jpg',
 		},
         {
@@ -23,7 +31,11 @@ const Blogs = () => {
 			name: "Ramamoorthi M",
 			date: "July 5, 2021",
 			title: "My favourite books of 2021",
+<<<<<<< HEAD
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante.",
+=======
+			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
+>>>>>>> 2b616f0db6497020526b450002b5b125b44e09b1
 			img: '/assets/blog-images/blog-3.jpg',
 		}
     ];
