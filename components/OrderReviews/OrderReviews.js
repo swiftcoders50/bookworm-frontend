@@ -56,14 +56,14 @@ const OrderReviews = () => {
     }
     return (
         <div>
-          <div className="flex w-4/5 m-auto py-8">
+          <div className="flex w-4/5 m-auto py-24">
           <div className="grid md:grid-cols-5">
             <div  className="col-span-3">
           {
             fBooks.map((book) => (<OrderReview key={book.id} book={book}></OrderReview>))
           }
           </div>
-          <div className="col-span-2 px-16">
+          <div className="col-span-2 px-3 md:px-16">
             <div className="bg-white shadow-lg rounded-lg border p-12">
               <div className="flex mb-3 justify-between"><span>Subtotal:</span><span>$ {totalPrice}</span> </div><hr/>
               <div className="flex mb-3 justify-between"><span>Shipping:</span><span>$ 50</span> </div><hr/>
