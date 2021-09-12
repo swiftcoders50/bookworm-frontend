@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import Books from "../Books/Books";
 import Link from "next/link";
+import { CartContext } from "../../pages/_app";
 
 const BestSeller = () => {
   // demo array of books
@@ -12,13 +13,6 @@ const BestSeller = () => {
       price: 42,
       img: "/assets/book-images/hate-kolome-javascript-by-zonayed-ahmed.jpg",
     },
-    {
-      id: 2,
-      name: "Eloquent-javascript",
-      author: "Marijn Haverbake",
-      price: 50,
-      img: "/assets/book-images/eloquent-javascript.jpg",
-    },
 
     {
       id: 4,
@@ -28,27 +22,39 @@ const BestSeller = () => {
       img: "/assets/book-images/computer-programming-data-structure-part-3-by-tamim-shariayer-subben.jpg",
     },
     {
-      id: 5,
-      name: "Recharge your down battery",
-      author: "Jhankar Mahbub",
-      price: 50,
+      id: 22,
+      name: "Computer Programming",
+      author: "Subeen",
+      price: 70,
       img: "/assets/book-images/recharge_your-down_battery_jhankar_mahbub.jpg",
     },
     {
-      id: 6,
+      id: 98,
       name: "Computer Programming",
       author: "Subeen",
       price: 70,
       img: "/assets/book-images/computer-programming-data-structure-part-3-by-tamim-shariayer-subben.jpg",
     },
     {
-      id: 7,
-      name: "Recharge your down battery",
-      author: "Jhankar Mahbub",
-      price: 50,
+      id: 552,
+      name: "Computer Programming",
+      author: "Subeen",
+      price: 70,
       img: "/assets/book-images/recharge_your-down_battery_jhankar_mahbub.jpg",
     },
+    {
+      id: 5,
+      name: "Hate kolome javascript",
+      author: "Zonayed Ahmed",
+      price: 42,
+      img: "/assets/book-images/hate-kolome-javascript-by-zonayed-ahmed.jpg",
+    },
   ];
+
+  const [cartData, setCardData] = useContext(CartContext);
+  const handleBuy = (singleBook) => {
+    setCardData([...cartData, singleBook]);
+  };
 
   return (
     // best seller container
@@ -68,20 +74,20 @@ const BestSeller = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4 cursor-pointer">
         {/* cart */}
         {bestBooks.map((book) => (
-          <Books key={book.id} book={book} />
+          <Books handleBuy={handleBuy} key={book.id} book={book} />
         ))}
       </div>
 
-      {/* load more button */}
-      <div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
-        <Link href="/">
-          <a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold ">
-            More Best seller books
-          </a>
-        </Link>
-      </div>
-    </div>
-  );
+			{/* load more button */}
+			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
+				<Link href="/">
+					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold ">
+						More Best seller books
+					</a>
+				</Link>
+			</div>
+		</div>
+	);
 };
 
 export default BestSeller;

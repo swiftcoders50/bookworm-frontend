@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FaHeart } from "react-icons/fa";
 
-const Books = ({ book }) => {
+const Books = ({ book, handleBuy }) => {
   return (
     <div
       key={book.id}
@@ -11,7 +11,7 @@ const Books = ({ book }) => {
       <div className="md:flex h-auto md:h-48">
         <div className="flex sm:flex-shrink-0 justify-center">
           <img
-            className="h-48 md:h-full w-full object-cover"
+            className="h-48 w-full md:w-32 md:h-full  object-cover"
             src={book.img}
             alt={book.name}
           />
@@ -27,7 +27,10 @@ const Books = ({ book }) => {
           <div className="flex items-center justify-between">
             <Link href="/">
               <a>
-                <button className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold">
+                <button
+                  onClick={() => handleBuy(book)}
+                  className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold"
+                >
                   Buy Now
                 </button>
               </a>

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../pages/_app";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
+  const [cartData, setCardData] = useContext(CartContext);
 
   const changeBackground = () => {
     if (window.scrollY >= 70) {
@@ -16,10 +18,8 @@ const Header = () => {
   }, []);
   return (
     <>
-      {/* flex items-center bg-gray-200 p-3 flex-wrap lg:px-20 */}
-
       <nav
-        className={`sticky w-full z-10 flex items-center p-3 flex-wrap lg:px-20 ${
+        className={`fixed w-full z-10 flex items-center p-3 flex-wrap lg:px-20 ${
           navbar ? "bg-blue-300" : "bg-gray-200"
         }`}
       >
@@ -42,15 +42,15 @@ const Header = () => {
           <svg
             className="w-10"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
+            className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
@@ -151,6 +151,29 @@ const Header = () => {
             >
               <span>Login</span>
             </a>
+
+            {/* cart icon*/}
+            <div className="flex ml-3 sm:mt-0 mt-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <h1
+                style={{ marginTop: "-10px", color: "red", fontWeight: "700" }}
+              >
+                {cartData.length}
+              </h1>
+            </div>
           </div>
         </div>
       </nav>

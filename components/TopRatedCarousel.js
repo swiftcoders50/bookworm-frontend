@@ -46,12 +46,12 @@ const TopRatedCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 2000,
+    speed: 4000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 5000,
     cssEase: "linear",
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
@@ -59,7 +59,7 @@ const TopRatedCarousel = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider {...settings} style={{ paddingTop: "80px" }}>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 my-8 md:mx-12 px-12 gap-x-9">
           <div className="flex justify-center items-center">
