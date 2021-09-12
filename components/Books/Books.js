@@ -25,16 +25,15 @@ const Books = ({ book, handleBuy }) => {
             ${book.price}
           </h3>
           <div className="flex items-center justify-between">
-            <Link href="/">
-              <a>
-                <button
-                  onClick={() => handleBuy(book)}
-                  className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold"
-                >
-                  Buy Now
-                </button>
-              </a>
-            </Link>
+            <a>
+              <button
+                onClick={() => handleBuy(book)}
+                className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold"
+              >
+                Buy Now
+              </button>
+            </a>
+
             {/* icon */}
             <FaHeart className="cursor-pointer" size="1.2rem" color="gray" />
           </div>
