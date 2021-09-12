@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../pages/_app";
+import Link from "next/link";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,18 +24,14 @@ const Header = () => {
           navbar ? "bg-blue-300" : "bg-gray-200"
         }`}
       >
-        <a href="#" className="p-2 mr-4 inline-flex items-center">
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            className="fill-current text-indigo-900  h-8 w-8 mr-2"
-          >
-            <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-          </svg>
-          <span className="text-xl text-indigo-900 font-bold uppercase tracking-wide">
-            BOOKWORM
-          </span>
-        </a>
+        <Link href="/">
+          <a className="p-2 mr-4 inline-flex items-center">
+            <span className="text-xl text-indigo-900 font-bold uppercase tracking-wide">
+              BOOKWORM
+            </span>
+          </a>
+        </Link>
+
         <button
           onClick={() => setShowMenu(!showMenu)}
           className="text-gray-600 font-bold inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
@@ -56,25 +53,22 @@ const Header = () => {
           </svg>
         </button>
         <div
-          // hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto
           className={`${
             showMenu === false ? "hidden" : ""
           } top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
-            <a
-              href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:bg-indigo-900 hover:text-white"
-            >
-              <span>Home</span>
-            </a>
-            <a
-              href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
-            >
-              <div className="flex">
-                <span>Categories</span>
-                {/* <span>
+            <Link href="/">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:bg-indigo-900 hover:text-white">
+                <span>Home</span>
+              </a>
+            </Link>
+
+            <Link href="/categories">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <div className="flex">
+                  <span>Categories</span>
+                  {/* <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-5"
@@ -88,9 +82,9 @@ const Header = () => {
                     />
                   </svg>
                 </span> */}
-              </div>
-            </a>
-
+                </div>
+              </a>
+            </Link>
             {/* this is dropdown */}
             {/* <div class="group inline-block relative">
               <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
@@ -131,49 +125,51 @@ const Header = () => {
               </ul>
             </div> */}
             {/* end of dropdown */}
+            <Link href="/bestSeller">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <span>Best Sellers</span>
+              </a>
+            </Link>
 
-            <a
-              href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
-            >
-              <span>Best Sellers</span>
-            </a>
-            <a
-              href="#"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
-            >
-              <span>Contact</span>
-            </a>
-            <a
-              href="#"
-              // className="lg:inline-flex lg:w-auto w-10 px-6 text-gray-800 rounded-full   cursor-pointer tracking-wider bg-red-400 border-2 hover:bg-indigo-900 hover:text-white items-center  p-2 font-bold"
-              className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white"
-            >
-              <span>Login</span>
-            </a>
+            <Link href="/contact">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <span>Contact</span>
+              </a>
+            </Link>
 
+            <Link href="/login">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <span>Login</span>
+              </a>
+            </Link>
             {/* cart icon*/}
-            <div className="flex ml-3 sm:mt-0 mt-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <h1
-                style={{ marginTop: "-10px", color: "red", fontWeight: "700" }}
-              >
-                {cartData.length}
-              </h1>
-            </div>
+            <Link href="/order_review">
+              <div className="flex ml-3 sm:mt-0 mt-3 cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-indigo-900"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <h1
+                  style={{
+                    marginTop: "-10px",
+                    color: "rgba(49, 46, 129, var(--tw-bg-opacity))",
+                    fontWeight: "700",
+                  }}
+                >
+                  {cartData.length}
+                </h1>
+              </div>
+            </Link>
           </div>
         </div>
       </nav>
