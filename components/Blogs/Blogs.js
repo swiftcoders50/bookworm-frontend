@@ -25,7 +25,7 @@ const Blogs = () => {
 			title: "My favourite books of 2021",
 			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit ligula id erat accumsan eleifend ut ac metus. Aliquam nec arcu et felis tincidunt vestibulum et eget ante. ",
 			img: '/assets/blog-images/blog-3.jpg',
-		},
+		}
     ];
     return (
         <section className="px:10 md:px-20 lg:px-40 pb-20">
