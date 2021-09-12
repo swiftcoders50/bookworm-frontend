@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import OrderReview from "../OrderReview/OrderReview";
+import Link from "next/link";
 
 const OrderReviews = () => {
     const fBooks = [
@@ -70,6 +71,11 @@ const OrderReviews = () => {
               <div className="flex mb-3 justify-between"><span>Total:</span><span>$ {totalPrice+50}</span> </div>
 
             </div>
+            <Link href="/checkOut">
+            <button className="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-teal-500 rounded-full shadow item-center bg-indigo-900 hover:bg-teal-700 focus:shadow-outline focus:outline-none">
+              <a>Checkout</a>
+            </button> 
+            </Link>
           </div>
           </div>
           </div>
