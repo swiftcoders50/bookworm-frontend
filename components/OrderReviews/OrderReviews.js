@@ -1,4 +1,6 @@
-import OrderReview from "./OrderReview/OrderReview";
+import React from "react";
+import { useState, useEffect } from 'react';
+import OrderReview from "../OrderReview/OrderReview";
 
 const OrderReviews = () => {
     const fBooks = [
@@ -36,20 +38,41 @@ const OrderReviews = () => {
           quantity: 1
         },
       ];
+      const [totalPrice,setTotalPrice] = useState(0);
+      // Function for total price
+      useEffect(() => {
+       sumOfPrice();
+     },[])
+     const sumOfPrice = () => {
+      let total = 0;
+      let subTotal = 0;
+      fBooks.map((book) => {
+         total = book.price*book.quantity;
+         subTotal = subTotal + total;
+         console.log(total);
+        setTotalPrice(subTotal);
+        
+      })
+    }
     return (
         <div>
-            <div className="grid grid-cols-6 gap-4">
-                <h5>Product Image</h5>
-                <h5>Details</h5>
-                <h5>Quantity</h5>
-                <h5>Remove</h5>
-                <h5>Price</h5>
-                <h5>Total Price</h5>
-            </div>
+          <div className="flex w-4/5 m-auto py-8">
+          <div className="grid md:grid-cols-5">
+            <div  className="col-span-3">
+          {
+            fBooks.map((book) => (<OrderReview key={book.id} book={book}></OrderReview>))
+          }
+          </div>
+          <div className="col-span-2 px-16">
+            <div className="bg-white shadow-lg rounded-lg border p-12">
+              <div className="flex mb-3 justify-between"><span>Subtotal:</span><span>$ {totalPrice}</span> </div><hr/>
+              <div className="flex mb-3 justify-between"><span>Shipping:</span><span>$ 50</span> </div><hr/>
+              <div className="flex mb-3 justify-between"><span>Total:</span><span>$ {totalPrice+50}</span> </div>
 
-            {
-              fBooks.map(product => (<OrderReview key={product} product={product}></OrderReview>))
-            }
+            </div>
+          </div>
+          </div>
+          </div>
         </div>
     );
 };
