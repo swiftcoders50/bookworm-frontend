@@ -10,10 +10,13 @@ const OrderReviews = () => {
       const [totalPrice,setTotalPrice] = useState(0);
       const [shippingPrice,setShippingPrice] = useState(50);
       setCartTotal(totalPrice);
+
+
       useEffect(() => {
        sumOfPrice();
      },[cartData])
 
+    //  Product price calculation
      const sumOfPrice = () => {
       let total = 0;
       let subTotal = 0;
@@ -29,6 +32,7 @@ const OrderReviews = () => {
       })
     }
 
+    // Handle Cart Items quantity with plus minus icon
     const handlePlusMinus = (id,quantity) => {
       let newCart;
       cartData.map(item => {
@@ -36,13 +40,12 @@ const OrderReviews = () => {
           newCart = {...item,quantity:quantity};
         }
       })
-      console.log(newCart);
       let newData = cartData.filter(item => item.id != id)
       newData = [...newData,newCart];
-      console.log(newData);
       setCartData(newData);
     }
 
+    // Delete items from cart
     const deleteItem = (id) => {
       console.log(id);
       let newData = cartData.filter(item => item.id != id)
@@ -50,15 +53,18 @@ const OrderReviews = () => {
       setCartData(newData);
       setBooks(newData);
     }
+
     return (
         <div>
           <div className="flex w-4/5 m-auto py-24">
           <div className="grid md:grid-cols-5">
+
             <div  className="col-span-3">
           {
             books.map((book) => (<OrderReview key={book.id} book={book} handlePlusMinus = {handlePlusMinus} deleteItem = {deleteItem}></OrderReview>))
           }
           </div>
+          
           <div className="col-span-2 px-3 md:px-16">
             <div className="bg-white shadow-lg rounded-lg border p-12">
               <div className="flex justify-between mb-2 text-lg font-medium text-center text-gray-800"><span>Subtotal:</span><span>$ {totalPrice}</span> </div><hr/>
