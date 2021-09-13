@@ -1,53 +1,23 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useContext,useState, useEffect } from 'react';
 import OrderReview from "../OrderReview/OrderReview";
 import Link from "next/link";
+import { CartContext } from "../../pages/_app";
 
 const OrderReviews = () => {
-    const fBooks = [
-        {
-          id: 1,
-          name: "Origin",
-          author: "Dan Brown",
-          price: 99,
-          img: "/assets/book-images/origin.jpg",
-          quantity: 2
-        },
-        {
-          id: 2,
-          name: "The Subtle Art of Not Givig A F*ck",
-          author: "Marijn Haverbake",
-          price: 70,
-          img: "/assets/book-images/subtleArt.jpg",
-          quantity: 1
-        },
-    
-        {
-          id: 4,
-          name: "The Da Vinci Code",
-          author: "Dan Brown",
-          price: 80,
-          img: "/assets/book-images/vinci.jpg",
-          quantity: 5
-        },
-        {
-          id: 5,
-          name: "Half Girlfriend",
-          author: "Chetan Bhagat",
-          price: 50,
-          img: "/assets/book-images/hgf.jpg",
-          quantity: 1
-        },
-      ];
+      const [cartData, setCardData] = useContext(CartContext);
+      const [books, setBooks] = useState(cartData);
       const [totalPrice,setTotalPrice] = useState(0);
-      // Function for total price
+
+      console.log(cartData);
       useEffect(() => {
        sumOfPrice();
-     },[])
+     },[cartData])
+
      const sumOfPrice = () => {
       let total = 0;
       let subTotal = 0;
-      fBooks.map((book) => {
+      cartData.map((book) => {
          total = book.price*book.quantity;
          subTotal = subTotal + total;
          console.log(total);
@@ -55,13 +25,28 @@ const OrderReviews = () => {
         
       })
     }
+
+    const handlePlus = (id) => {
+      let newCart;
+      cartData.map(item => {
+        if (id == item.id) {
+          let quantity = ++item.quantity;
+          newCart = {...item,quantity:quantity};
+        }
+      })
+      console.log(newCart);
+      let newData = cartData.filter(item => item.id != id)
+      newData = [...newData,newCart];
+      console.log(newData);
+      setCardData(newData);
+    }
     return (
         <div>
           <div className="flex w-4/5 m-auto py-24">
           <div className="grid md:grid-cols-5">
             <div  className="col-span-3">
           {
-            fBooks.map((book) => (<OrderReview key={book.id} book={book}></OrderReview>))
+            books.map((book) => (<OrderReview key={book.id} book={book} handlePlus = {handlePlus}></OrderReview>))
           }
           </div>
           <div className="col-span-2 px-3 md:px-16">

@@ -3,7 +3,12 @@ import { FaPlus, FaMinus, FaRegTrashAlt  } from "react-icons/fa";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const OrderReview = ({book}) => {
+const OrderReview = ({book , handlePlus}) => {
+    const [quantity,setQuantity] = useState(book.quantity);
+    const plus = (id) => {
+        setQuantity(quantity+1);
+        handlePlus(id);
+    }
     return (
         <div>
             <div className="bg-white shadow-lg rounded-lg border p-8 mb-2">
@@ -22,8 +27,8 @@ const OrderReview = ({book}) => {
                 <div className="flex content-center">
                 <div className="flex-1 flex flex-wrap items-end justify-between content-center text-sm">
                 <div className="border px-2 py-1 border-gray-400 rounded">
-                <button className="md:mr-4"><FaPlus className="cursor-pointer" size=".8rem" color="black" /></button>
-                <input class="mx-2 text-center w-2 font-medium text-gray-800" type="text" value={book.quantity}/>
+                <button onClick={()=> plus(book.id)} className="md:mr-4"><FaPlus className="cursor-pointer" size=".8rem" color="black" /></button>
+                <input class="mx-2 text-center w-5 font-medium text-gray-800" type="text" value={quantity}/>
                 <button className="md:ml-4"><FaMinus className="cursor-pointer" size=".8rem" color="black" /></button>
                 </div>
                 </div>

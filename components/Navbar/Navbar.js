@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 
 const Header = () => {
@@ -153,6 +154,7 @@ const Header = () => {
             </a>
 
             {/* cart icon*/}
+            <Link href="/order_review">
             <div className="flex ml-3 sm:mt-0 mt-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,6 +176,7 @@ const Header = () => {
                 {cartData.length}
               </h1>
             </div>
+            </Link>
           </div>
         </div>
       </nav>
