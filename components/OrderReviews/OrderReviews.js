@@ -72,10 +72,10 @@ const OrderReviews = () => {
             </button> 
             </Link>
           </div>
-          </div>
-          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default OrderReviews;
