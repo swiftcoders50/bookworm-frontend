@@ -5,11 +5,11 @@ import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 
 const OrderReviews = () => {
-      const [cartData, setCardData] = useContext(CartContext);
+      const [cartData, setCartData, cartTotal ,setCartTotal] = useContext(CartContext);
       const [books, setBooks] = useState(cartData);
       const [totalPrice,setTotalPrice] = useState(0);
-
-      console.log(cartData);
+      const [shippingPrice,setShippingPrice] = useState(50);
+      setCartTotal(totalPrice);
       useEffect(() => {
        sumOfPrice();
      },[cartData])
@@ -17,20 +17,22 @@ const OrderReviews = () => {
      const sumOfPrice = () => {
       let total = 0;
       let subTotal = 0;
+      if (!cartData.length) {
+        setTotalPrice(0);
+        setShippingPrice(0);
+      }
       cartData.map((book) => {
          total = book.price*book.quantity;
          subTotal = subTotal + total;
-         console.log(total);
         setTotalPrice(subTotal);
         
       })
     }
 
-    const handlePlus = (id) => {
+    const handlePlusMinus = (id,quantity) => {
       let newCart;
       cartData.map(item => {
         if (id == item.id) {
-          let quantity = ++item.quantity;
           newCart = {...item,quantity:quantity};
         }
       })
@@ -38,7 +40,15 @@ const OrderReviews = () => {
       let newData = cartData.filter(item => item.id != id)
       newData = [...newData,newCart];
       console.log(newData);
-      setCardData(newData);
+      setCartData(newData);
+    }
+
+    const deleteItem = (id) => {
+      console.log(id);
+      let newData = cartData.filter(item => item.id != id)
+      console.log(newData);
+      setCartData(newData);
+      setBooks(newData);
     }
     return (
         <div>
@@ -46,14 +56,14 @@ const OrderReviews = () => {
           <div className="grid md:grid-cols-5">
             <div  className="col-span-3">
           {
-            books.map((book) => (<OrderReview key={book.id} book={book} handlePlus = {handlePlus}></OrderReview>))
+            books.map((book) => (<OrderReview key={book.id} book={book} handlePlusMinus = {handlePlusMinus} deleteItem = {deleteItem}></OrderReview>))
           }
           </div>
           <div className="col-span-2 px-3 md:px-16">
             <div className="bg-white shadow-lg rounded-lg border p-12">
-              <div className="flex mb-3 justify-between"><span>Subtotal:</span><span>$ {totalPrice}</span> </div><hr/>
-              <div className="flex mb-3 justify-between"><span>Shipping:</span><span>$ 50</span> </div><hr/>
-              <div className="flex mb-3 justify-between"><span>Total:</span><span>$ {totalPrice+50}</span> </div>
+              <div className="flex justify-between mb-2 text-lg font-medium text-center text-gray-800"><span>Subtotal:</span><span>$ {totalPrice}</span> </div><hr/>
+              <div className="flex justify-between mb-2 text-lg font-medium text-center text-gray-800"><span>Shipping:</span><span>$ {shippingPrice}</span> </div><hr/>
+              <div className="flex justify-between mb-2 text-lg font-medium text-center text-gray-800"><span>Total:</span><span>$ {totalPrice+shippingPrice}</span> </div>
 
             </div>
             <Link href="/checkOut">
