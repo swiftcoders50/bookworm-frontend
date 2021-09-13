@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { CartContext } from "../../pages/_app";
-import Link from "next/link";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
