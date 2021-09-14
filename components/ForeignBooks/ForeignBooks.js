@@ -53,6 +53,7 @@ const ForeignBooks = () => {
 
   const [cartData, setCardData] = useContext(CartContext);
   const handleBuy = (singleBook) => {
+    singleBook = { ...singleBook, quantity: 1 };
     setCardData([...cartData, singleBook]);
   };
   return (
