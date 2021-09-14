@@ -13,11 +13,7 @@ const blogDetails = () => {
   return (
     <div className="pt-48 pb-32 flex  px-10 py-10 justify-center items-center">
       <div className="rounded overflow-hidden shadow-md">
-        <img
-          className="h-96 w-full rounded"
-          src="/assets/blog-images/blog-2.jpg"
-          alt=""
-        />
+        <img className="h-96 w-full rounded" src={newBlogData?.img} alt="" />
         {/* description */}
         <div className="px-5 pb-7 space-y-5 text-indigo-900 font-bold bg-gray-100 pt-5">
           <div>
