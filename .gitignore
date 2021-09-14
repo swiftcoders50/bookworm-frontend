@@ -23,6 +23,9 @@ yarn.lock
 .DS_Store
 *.pem
 
+#firebase
+firebase.config.js
+
 # debug
 npm-debug.log*
 yarn-debug.log*
