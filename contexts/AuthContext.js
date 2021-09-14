@@ -9,11 +9,13 @@ import {
 	signOut,
 	updateProfile,
 	onAuthStateChanged,
+	sendPasswordResetEmail,
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
 } from "firebase/auth";
 const auth = getAuth();
 
+// auth context
 const AuthContext = createContext();
 
 // we will can call it from any components and get values
@@ -47,18 +49,8 @@ const AuthProvider = ({ children }) => {
 
 	// sent password reset email
 	const passwordResetEmail = (email) => {
-		return auth.sendPasswordResetEmail(email);
+		return sendPasswordResetEmail(auth, email);
 	};
-
-	// update email
-	function updateEmail(email) {
-		return currentUser.updateEmail(email);
-	}
-
-	// update password
-	function updatePassword(password) {
-		return currentUser.updatePassword(password);
-	}
 
 	// get user information after login
 	useEffect(() => {
@@ -70,13 +62,11 @@ const AuthProvider = ({ children }) => {
 	});
 
 	const value = {
-		currentUser,
 		signup,
 		login,
 		logout,
+		currentUser,
 		passwordResetEmail,
-		updatePassword,
-		updateEmail,
 	};
 
 	return (

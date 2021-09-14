@@ -55,6 +55,7 @@ const Signup = () => {
 								ref={nameRef}
 								placeholder="Enter name"
 								className="text-lg text-indigo-900 outline-none flex-1"
+								required
 							/>
 						</div>
 						{/* email field */}
@@ -90,14 +91,12 @@ const Signup = () => {
 								required
 							/>
 						</div>
-						<div className="my-4 w-full bg-indigo-900 text-center hover:ring-2 ring-indigo-400 rounded">
-							<input
-								type="submit"
-								disabled={loading}
-								value={`${loading ? "Processing" : "Sign Up"}`}
-								className="bg-indigo-900 text-white text-lg font-semibold p-2 "
-							/>
-						</div>
+						<input
+							type="submit"
+							disabled={loading}
+							value={`${loading ? "Processing" : "Sign Up"}`}
+							className="my-4 w-full bg-indigo-900 text-white text-lg block font-semibold p-2 hover:ring-2 ring-indigo-400 rounded"
+						/>
 					</form>
 					<div className="flex justify-between">
 						<p className="text-indigo-900 text-md">Already have an account ?</p>
