@@ -23,7 +23,11 @@ const Signup = () => {
 		try {
 			setMessage("");
 			setLoading(true);
-			await signup(emailRef.current.value, passwordRef.current.value);
+			await signup(
+				nameRef.current.value,
+				emailRef.current.value,
+				passwordRef.current.value
+			);
 			setMessage("Your account has been created successfully");
 		} catch (err) {
 			setMessage("This email already in use another account!");

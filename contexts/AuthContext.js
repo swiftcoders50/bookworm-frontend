@@ -7,6 +7,7 @@ const app = initializeApp(firebaseConfig);
 import {
 	getAuth,
 	signOut,
+	updateProfile,
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
@@ -25,9 +26,14 @@ const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState();
 
 	// sign up user method
-	const signup = (email, password) => {
-		return createUserWithEmailAndPassword(auth, email, password);
+	const signup = async (name, email, password) => {
+		await createUserWithEmailAndPassword(auth, email, password);
+		await updateProfile(auth.currentUser, {
+			displayName: name,
+		});
 	};
+
+	console.log(currentUser);
 
 	// login user method
 	const login = (email, password) => {
@@ -36,7 +42,7 @@ const AuthProvider = ({ children }) => {
 
 	// logout user method
 	const logout = () => {
-		return auth.signOut();
+		return signOut(auth);
 	};
 
 	// sent password reset email
@@ -56,7 +62,7 @@ const AuthProvider = ({ children }) => {
 
 	// get user information after login
 	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
+		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			setCurrentUser(user);
 			setLoading(true);
 		});
