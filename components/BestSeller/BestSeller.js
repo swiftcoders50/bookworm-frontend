@@ -53,6 +53,8 @@ const BestSeller = () => {
 
   const [cartData, setCardData] = useContext(CartContext);
   const handleBuy = (singleBook) => {
+    singleBook = {...singleBook, quantity:1}
+    console.log(singleBook);
     setCardData([...cartData, singleBook]);
   };
 
