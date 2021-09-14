@@ -8,7 +8,6 @@ const blogDetails = () => {
   const { id } = router.query;
 
   const newBlogData = blogData.find((data) => data.id == id);
-  console.log(newBlogData);
 
   return (
     <div className="pt-48 pb-32 flex  px-10 py-10 justify-center items-center">
