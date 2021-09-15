@@ -42,29 +42,3 @@ const blogDetails = () => {
 };
 
 export default blogDetails;
-
-// <div className="pt-36 pb-32 flex  px-10 py-10 justify-center items-center">
-//   <div className="rounded overflow-hidden shadow-md  grid sm:grid-cols-2">
-//     {/* image */}
-//     <div>
-//       <img
-//         className="h-full w-full rounded"
-//         src={newBlogData?.img}
-//         alt=""
-//       />
-//     </div>
-
-//     {/* description */}
-//     <div className="px-5 pb-5 space-y-3 text-indigo-900 font-bold bg-gray-100 lg:pt-24">
-//       <div className="text-lg">ID : {newBlogData?.id} </div>
-
-//       <div className="text-lg">NAME : {newBlogData?.name} </div>
-
-//       <div className="text-lg">TITLE : {newBlogData?.title} </div>
-
-//       <div className="text-lg">DESCRIPTION : {newBlogData?.text} </div>
-
-//       <div className="text-lg">DATE : {newBlogData?.date} </div>
-//     </div>
-//   </div>
-// </div>
