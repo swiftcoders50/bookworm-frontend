@@ -7,14 +7,18 @@ export const CartContext = createContext();
 export const BlogContext = createContext();
 function MyApp({ Component, pageProps }) {
 	const [cartData, setCardData] = useState([]);
+	const [cartTotal,setCartTotal] = useState(0);
+	const [blogData, setBlogData] = useState([]);
 	return (
 		// apel-auth-comp
 		<AuthProvider>
-			<CartContext.Provider value={[cartData, setCardData]}>
+			<BlogContext.Provider value={[blogData, setBlogData]}>
+			<CartContext.Provider value={[cartData, setCardData, cartTotal ,setCartTotal]}>
 				<Layout>
 					<Component {...pageProps} />
 				</Layout>
 			</CartContext.Provider>
+			</BlogContext.Provider>
 		</AuthProvider>
 	);
 }
