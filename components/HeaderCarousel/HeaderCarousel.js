@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import CarouselRotateImage from "./CarouselRotateImage";
+// import CarouselRotateImage from "./CarouselRotateImage";
 // react-slick css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -46,7 +46,7 @@ const HeaderCarousel = ({ isVisible }) => {
 	// carousel settings
 	const settings = {
 		dots: true,
-		autoplay: false,
+		autoplay: true,
 		autoplaySpeed: 6000,
 		infinite: true,
 		speed: 900,
@@ -57,7 +57,31 @@ const HeaderCarousel = ({ isVisible }) => {
 		prevArrow: <SamplePrevArrow />,
 	};
 
-	// carousel body information
+	// carousel animation image
+	const CarouselRotateImage = ({ image }) => {
+		const styles = useSpring({
+			loop: { reverse: true },
+			from: { rotateZ: -5 },
+			to: { rotateZ: 5 },
+			config: { duration: 3000 },
+		});
+
+		return (
+			<animated.div
+				style={{
+					...styles,
+				}}
+			>
+				<img
+					className="w-full h-full md:pt-5 pt-0"
+					src={image}
+					alt="banner carouse image"
+				/>
+			</animated.div>
+		);
+	};
+
+	// carousel body dummy information
 	const carouselInfo = [
 		{
 			id: new Date(),
