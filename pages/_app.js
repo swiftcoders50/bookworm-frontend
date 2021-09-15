@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
 	const [cartTotal,setCartTotal] = useState(0);
 	const [blogData, setBlogData] = useState([]);
 	return (
-		// apel-auth-comp
+		// apel-auth-component
 		<AuthProvider>
 			<BlogContext.Provider value={[blogData, setBlogData]}>
 			<CartContext.Provider value={[cartData, setCardData, cartTotal ,setCartTotal]}>
