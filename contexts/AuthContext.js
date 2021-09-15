@@ -5,7 +5,6 @@ import { initializeApp } from "firebase/app";
 const app = initializeApp(firebaseConfig);
 // firebase info
 import {
-	getApps,
 	getAuth,
 	signOut,
 	updateProfile,
