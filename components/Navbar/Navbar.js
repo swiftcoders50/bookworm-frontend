@@ -64,27 +64,14 @@ const Header = () => {
               </a>
             </Link>
 
-            <Link href="/categories">
+            {/* <Link href="/categories">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
                 <div className="flex">
                   <span>Categories</span>
-                  {/* <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
-                  </svg>
-                </span> */}
                 </div>
               </a>
-            </Link>
+            </Link> */}
+
             {/* this is dropdown */}
             {/* <div class="group inline-block relative">
               <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
@@ -125,15 +112,22 @@ const Header = () => {
               </ul>
             </div> */}
             {/* end of dropdown */}
-            <Link href="/bestSeller">
+
+            {/* <Link href="/bestSeller">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
                 <span>Best Sellers</span>
               </a>
-            </Link>
+            </Link> */}
 
             <Link href="/contact">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
                 <span>Contact</span>
+              </a>
+            </Link>
+
+            <Link href="/dashboard">
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <span>Dashboard</span>
               </a>
             </Link>
 
@@ -144,27 +138,31 @@ const Header = () => {
             </Link>
             {/* cart icon*/}
             <Link href="/order_review">
-            <div className="flex ml-3 sm:mt-0 mt-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <h1
-                style={{ marginTop: "-10px", color: "red", fontWeight: "700" }}
-              >
-                {cartData.length}
-              </h1>
-            </div>
+              <div className="flex ml-3 sm:mt-0 mt-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <h1
+                  style={{
+                    marginTop: "-10px",
+                    color: "red",
+                    fontWeight: "700",
+                  }}
+                >
+                  {cartData.length}
+                </h1>
+              </div>
             </Link>
           </div>
         </div>
