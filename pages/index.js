@@ -37,7 +37,7 @@ export default function Home() {
 			<UnreleasedBooks />
 
 			{/* opu */}
-			{/* <Blogs /> */}
+			<Blogs />
 
 			{/* apel */}
 			<Authors />
