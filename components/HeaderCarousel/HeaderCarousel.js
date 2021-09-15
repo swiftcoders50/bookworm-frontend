@@ -5,6 +5,7 @@ import CarouselRotateImage from "./CarouselRotateImage";
 // react-slick css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useSpring, animated } from "react-spring";
 
 // carousel custom style
 const customStyle = {
@@ -45,7 +46,7 @@ const HeaderCarousel = ({ isVisible }) => {
 	// carousel settings
 	const settings = {
 		dots: true,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 6000,
 		infinite: true,
 		speed: 900,

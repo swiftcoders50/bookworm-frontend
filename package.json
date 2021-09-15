@@ -16,9 +16,9 @@
 		"react-hook-form": "^7.12.2",
 		"react-icons": "^4.2.0",
 		"react-slick": "^0.28.1",
+		"react-spring": "^9.2.4",
 		"react-stripe-checkout": "^2.6.3",
-		"slick-carousel": "^1.8.1",
-		"react-spring": "^9.2.4"
+		"slick-carousel": "^1.8.1"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.6",
