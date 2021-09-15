@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect } from "react";
 import { useState } from "react";
 // firebase info
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "../firebase.config";
 const app = initializeApp(firebaseConfig);
 import {
 	getAuth,
