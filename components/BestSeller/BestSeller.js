@@ -53,8 +53,20 @@ const BestSeller = () => {
 
   const [cartData, setCardData] = useContext(CartContext);
   const handleBuy = (singleBook) => {
-    singleBook = { ...singleBook, quantity: 1 };
-    setCardData([...cartData, singleBook]);
+    let isAdded = false;
+    if (cartData.length == 0) {
+      singleBook = { ...singleBook, quantity: 1 };
+      setCardData([...cartData, singleBook]);
+    }
+    cartData.map(item => {
+      if (item.id == singleBook.id) {
+        isAdded = true;
+      }
+    })
+    if (!isAdded) {
+      singleBook = { ...singleBook, quantity: 1 };
+      setCardData([...cartData, singleBook]);
+    }
   };
 
   return (

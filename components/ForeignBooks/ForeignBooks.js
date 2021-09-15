@@ -53,9 +53,22 @@ const ForeignBooks = () => {
 
   const [cartData, setCardData] = useContext(CartContext);
   const handleBuy = (singleBook) => {
-    singleBook = { ...singleBook, quantity: 1 };
-    setCardData([...cartData, singleBook]);
+    let isAdded = false;
+    if (cartData.length == 0) {
+      singleBook = { ...singleBook, quantity: 1 };
+      setCardData([...cartData, singleBook]);
+    }
+    cartData.map(item => {
+      if (item.id == singleBook.id) {
+        isAdded = true;
+      }
+    })
+    if (!isAdded) {
+      singleBook = { ...singleBook, quantity: 1 };
+      setCardData([...cartData, singleBook]);
+    }
   };
+  
   return (
     // Foreign container
     <div className="mx-2 sm:mx-4 md:mx-16">
