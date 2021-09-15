@@ -10,33 +10,33 @@ import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>Bookworm</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* samiha */}
-      <TopRatedCarousel></TopRatedCarousel>
+	return (
+		<div>
+			<Head>
+				<title>Bookworm</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 
-      {/* apel */}
-      <BestSeller />
+			{/* samiha */}
+			<TopRatedCarousel></TopRatedCarousel>
 
-      {/* samiha */}
-      <Categories />
+			{/* apel */}
+			<BestSeller />
 
-      {/* opu */}
-      <ForeignBooks />
+			{/* samiha */}
+			<Categories />
 
-      {/* apel */}
-      <UnreleasedBooks />
+			{/* opu */}
+			<ForeignBooks />
 
+			{/* apel */}
+			<UnreleasedBooks />
 
-      {/* opu */}
-      <Blogs />
+			{/* opu */}
+			<Blogs />
 
-      {/* apel */}
-      <Authors />
-    </div>
-  );
+			{/* apel */}
+			<Authors />
+		</div>
+	);
 }

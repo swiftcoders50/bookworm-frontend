@@ -53,8 +53,7 @@ const BestSeller = () => {
 
   const [cartData, setCardData] = useContext(CartContext);
   const handleBuy = (singleBook) => {
-    singleBook = {...singleBook, quantity:1}
-    console.log(singleBook);
+    singleBook = { ...singleBook, quantity: 1 };
     setCardData([...cartData, singleBook]);
   };
 
@@ -80,16 +79,16 @@ const BestSeller = () => {
         ))}
       </div>
 
-			{/* load more button */}
-			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
-				<Link href="/">
-					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold ">
-						More Best seller books
-					</a>
-				</Link>
-			</div>
-		</div>
-	);
+      {/* load more button */}
+      <div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
+        <Link href="/">
+          <a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold ">
+            More Best seller books
+          </a>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default BestSeller;
