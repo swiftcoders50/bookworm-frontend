@@ -58,17 +58,17 @@ const ForeignBooks = () => {
       singleBook = { ...singleBook, quantity: 1 };
       setCardData([...cartData, singleBook]);
     }
-    cartData.map(item => {
+    cartData.map((item) => {
       if (item.id == singleBook.id) {
         isAdded = true;
       }
-    })
+    });
     if (!isAdded) {
       singleBook = { ...singleBook, quantity: 1 };
       setCardData([...cartData, singleBook]);
     }
   };
-  
+
   return (
     // Foreign container
     <div className="mx-2 sm:mx-4 md:mx-16">
@@ -76,11 +76,11 @@ const ForeignBooks = () => {
         <h1 className="text-2xl md:text-3xl font-semibold text-indigo-900">
           Foreign Books
         </h1>
-        <Link href="/">
+        {/* <Link href="/">
           <a className="text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-semibold">
             View All
           </a>
-        </Link>
+        </Link> */}
       </div>
 
       {/* Foreign Cart container */}
