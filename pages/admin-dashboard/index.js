@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 import Link from "next/link";
+import { useState } from "react";
+import ordersData from "../../data/ordersData/ordersData";
+import usersData from "../../data/usersData/usersData";
 
 const index = () => {
-  const btn = document.querySelector(".mobile-menu-button");
+  const [section, setSection] = useState("users");
+  const [orders] = useState(ordersData);
+  const [users] = useState(usersData);
   const sidebarRef = useRef(null);
 
   const showSidebar = () => {
@@ -52,19 +57,19 @@ const index = () => {
 
         {/* nav */}
         <nav>
-          {/* <Link href="#dashboard">
-            <a className="block py-2.5 px-4 rounded transition duration-200 hover:bg-indigo-500 hover:text-white">
-              Dashboard
-            </a>
-          </Link> */}
-
           <Link href="#users">
-            <a className="block py-2.5 px-4 rounded transition duration-200 hover:bg-indigo-500 hover:text-white">
+            <a
+              className="block my-2 py-2.5 px-4 text-xl rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
+              onClick={() => setSection("users")}
+            >
               Users
             </a>
           </Link>
           <Link href="#orders">
-            <a className="block py-2.5 px-4 rounded transition duration-200 hover:bg-indigo-500 hover:text-white">
+            <a
+              className="block my-2 py-2.5 px-4 text-xl rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
+              onClick={() => setSection("orders")}
+            >
               Orders
             </a>
           </Link>
@@ -72,7 +77,55 @@ const index = () => {
       </div>
 
       {/* content */}
-      <div className="flex-1 p-10 text-2xl font-bold">Dashboard Content</div>
+      <div className="flex-1 p-10">
+        {section === "users" ? (
+          <div>
+            <h1 className="font-bold text-center text-2xl">Users</h1>
+            <div className="flex justify-center flex-wrap">
+              {users.map((user) => {
+                return (
+                  <div
+                    key={user.id}
+                    className="mx-2 my-4 p-8 text-base text-black-200 w-64 h-64 rounded shadow-lg border border-grey"
+                  >
+                    <p className="font-semibold">User Id: {user.id}</p>
+                    <p className="pt-3">Name: {user.name}</p>
+                    <p className="pt-3">Email: {user.email}</p>
+                    <p className="pt-3">Phone: {user.phone}</p>
+                    <p className="pt-3">Role: {user.role}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <h1 className="font-bold text-center text-2xl">Orders</h1>
+            <div className="flex justify-center flex-wrap">
+              {orders.map((order) => {
+                return (
+                  <div
+                    key={order.id}
+                    className="mx-2 my-4 p-8 text-base text-black-200 w-64 h-72 rounded shadow-lg border border-grey"
+                  >
+                    <p className="font-semibold">Order Id: {order.id}</p>
+                    <p className="pt-3">Book Name: {order.bookName}</p>
+                    <p className="pt-3">Ordered By: {order.name}</p>
+                    <p className="pt-3">Email: {order.email}</p>
+                    <p className="pt-3">Phone: {order.phone}</p>
+                    <p className="pt-3">
+                      Order Status:{" "}
+                      <span className="capitalize font-semibold">
+                        {order.orderStatus}
+                      </span>
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
