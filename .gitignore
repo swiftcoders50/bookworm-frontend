@@ -8,6 +8,7 @@
 package-lock.json
 /yarn.lock
 yarn.lock
+firebase.config.js
 
 # testing
 /coverage
