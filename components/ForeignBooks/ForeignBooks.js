@@ -7,14 +7,14 @@ const ForeignBooks = () => {
   // demo array of books
   const fBooks = [
     {
-      id: 1,
+      id: 1111,
       name: "Origin",
       author: "Dan Brown",
       price: 99,
       img: "/assets/book-images/origin.jpg",
     },
     {
-      id: 2,
+      id: 289,
       name: "The Subtle Art of Not Givig A F*ck",
       author: "Marijn Haverbake",
       price: 70,
@@ -22,28 +22,28 @@ const ForeignBooks = () => {
     },
 
     {
-      id: 4,
+      id: 434,
       name: "The Da Vinci Code",
       author: "Dan Brown",
       price: 80,
       img: "/assets/book-images/vinci.jpg",
     },
     {
-      id: 5,
+      id: 500,
       name: "Half Girlfriend",
       author: "Chetan Bhagat",
       price: 50,
       img: "/assets/book-images/hgf.jpg",
     },
     {
-      id: 6,
+      id: 666,
       name: "Shophie's World",
       author: "Jostien Gaarder",
       price: 70,
       img: "/assets/book-images/sophie-s-world.jpg",
     },
     {
-      id: 7,
+      id: 7007,
       name: "The Girl In Room 105",
       author: "Chetan Bhagat",
       price: 50,
