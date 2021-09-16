@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import CarouselRotateImage from "./CarouselRotateImage";
+// import CarouselRotateImage from "./CarouselRotateImage";
 // react-slick css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useSpring, animated } from "react-spring";
 
 // carousel custom style
 const customStyle = {
@@ -56,7 +57,31 @@ const HeaderCarousel = ({ isVisible }) => {
 		prevArrow: <SamplePrevArrow />,
 	};
 
-	// carousel body information
+	// carousel animation image
+	const CarouselRotateImage = ({ image }) => {
+		const styles = useSpring({
+			loop: { reverse: true },
+			from: { rotateZ: -5 },
+			to: { rotateZ: 5 },
+			config: { duration: 3000 },
+		});
+
+		return (
+			<animated.div
+				style={{
+					...styles,
+				}}
+			>
+				<img
+					className="w-full h-full md:pt-5 pt-0"
+					src={image}
+					alt="banner carouse image"
+				/>
+			</animated.div>
+		);
+	};
+
+	// carousel body dummy information
 	const carouselInfo = [
 		{
 			id: new Date(),
