@@ -144,8 +144,7 @@ const Header = () => {
             </Link>
             {/* cart icon*/}
             <Link href="/order_review">
-            <div className="flex ml-3 sm:mt-0 mt-3 cursor-pointer
-">
+            <div className="flex ml-3 sm:mt-0 mt-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
