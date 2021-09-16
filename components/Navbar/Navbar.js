@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { CartContext } from "../../pages/_app";
+import { useAuth } from "../../contexts/AuthContext";
+import { BiUser } from "react-icons/bi";
 
 const Header = () => {
+	const { currentUser } = useAuth();
 	const [showMenu, setShowMenu] = useState(false);
 	const [navbar, setNavbar] = useState(false);
 	const [cartData, setCardData] = useContext(CartContext);
-
 	const changeBackground = () => {
 		if (window.scrollY >= 70) {
 			setNavbar(true);
@@ -140,40 +142,55 @@ const Header = () => {
 								<span>Dashboard</span>
 							</a>
 						</Link>
-
-						<Link href="/login">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
-								<span>Login</span>
-							</a>
-						</Link>
 						{/* cart icon*/}
 						<Link href="/order_review">
-							<div className="flex ml-3 sm:mt-0 mt-3 text-indigo-900 cursor-pointer">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-5 w-5"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth="2"
-										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-									/>
-								</svg>
-								<div
-									className="text-gray-500"
-									style={{
-										marginTop: "-10px",
-										fontWeight: "700",
-									}}
-								>
-									{cartData.length}
+							<a>
+								<div className="flex ml-3 my-3 lg:my-0 text-indigo-900 cursor-pointer">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										className="h-5 w-5"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth="2"
+											d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+										/>
+									</svg>
+									<div
+										className="text-gray-500"
+										style={{
+											marginTop: "-10px",
+											fontWeight: "700",
+										}}
+									>
+										{cartData.length}
+									</div>
 								</div>
-							</div>
+							</a>
 						</Link>
+						{/* login button menu */}
+						{!currentUser && (
+							<Link href="/login">
+								<a className="lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-semibold items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
+									<span>Login</span>
+								</a>
+							</Link>
+						)}
+						{/* user name show on the menu */}
+						{currentUser && (
+							<Link href="/user-info">
+								<a>
+									<div className="flex items-center font-semibold text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
+										<BiUser className="mr-1" size="1.2rem" />
+										<span>{currentUser.displayName}</span>
+									</div>
+								</a>
+							</Link>
+						)}
 					</div>
 				</div>
 			</nav>
