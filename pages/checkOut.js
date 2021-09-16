@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useContext } from 'react';
 import { CartContext } from './_app';
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const checkOut = () => {
     const [cartData, setCardData, cartTotal ,setCartTotal] = useContext(CartContext);
@@ -10,7 +11,12 @@ const checkOut = () => {
     const router = useRouter()
     const onSubmit = data => {
         console.log(data);
+        if (data.payment == "card"){
+            router.push("/confirmPayment");
+        }
+        else {
         router.push("/orderComplete");
+        }
     }
     return (
         <div className="py-32">
