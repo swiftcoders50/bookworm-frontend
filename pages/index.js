@@ -7,6 +7,7 @@ import Authors from "../components/Authors/Authors";
 import ForeignBooks from "./../components/ForeignBooks/ForeignBooks";
 import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
+import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 
 export default function Home() {
 	return (
@@ -14,10 +15,14 @@ export default function Home() {
 			<Head>
 				<title>Bookworm</title>
 				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="bookworm"
+					content="Bookworm is book library for book lovers"
+				/>
 			</Head>
 
-			{/* samiha */}
-			<TopRatedCarousel></TopRatedCarousel>
+			{/* apel */}
+			<HeaderCarousel />
 
 			{/* apel */}
 			<BestSeller />
