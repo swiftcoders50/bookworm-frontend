@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import Link from "next/link";
 import {
   useStripe,
   useElements,
@@ -114,9 +115,11 @@ const SplitForm = () => {
           }}
         />
       </label>
+      <Link href="/orderComplete">
       <button className="px-12 py-2 mt-8 text-gray-200 rounded-full bg-indigo-900" type="submit" disabled={!stripe}>
         Pay
       </button>
+      </Link>
     </form>
   );
 };

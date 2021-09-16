@@ -36,8 +36,6 @@ const AuthProvider = ({ children }) => {
 		});
 	};
 
-	console.log(currentUser);
-
 	// login user method
 	const login = (email, password) => {
 		return signInWithEmailAndPassword(auth, email, password);

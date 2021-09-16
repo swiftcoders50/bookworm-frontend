@@ -43,9 +43,9 @@ const Blogs = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-indigo-900">
           Bookworm Blogs
         </h2>
-        <button className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold">
+        {/* <button className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold">
           Read all Blogs
-        </button>
+        </button> */}
       </div>
       <div className="py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
         {blogs.map((blog) => (
