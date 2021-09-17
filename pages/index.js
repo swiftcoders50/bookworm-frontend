@@ -20,6 +20,17 @@ export default function Home() {
 					content="Bookworm is book library for book lovers"
 				/>
 			</Head>
+			{/* Google font */}
+			<style jsx global>{`
+				html,
+				body {
+					font-family: "Roboto", sans-serif;
+				}
+				.font-oswald {
+					font-family: "Oswald", sans-serif;
+				}
+			`}</style>
+			{/* Google font */}
 
 			{/* apel */}
 			<HeaderCarousel />

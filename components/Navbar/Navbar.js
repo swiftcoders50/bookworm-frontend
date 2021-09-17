@@ -23,7 +23,7 @@ const Header = () => {
 		<>
 			<nav
 				className={`fixed w-full z-10 flex items-center py-3 flex-wrap px-2 md:px-8 lg:px-16 ${
-					navbar ? "bg-blue-300" : "bg-gray-200"
+					navbar ? "bg-white shadow-md" : "bg-gray-200"
 				}`}
 			>
 				<Link href="/">
@@ -59,13 +59,13 @@ const Header = () => {
 				>
 					<div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
 						<Link href="/">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:bg-indigo-900 hover:text-white">
 								<span>Home</span>
 							</a>
 						</Link>
 
 						{/* <Link href="/categories">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
 								<div className="flex">
 									<span>Categories</span>
 									<span>
@@ -126,19 +126,19 @@ const Header = () => {
 						</div> */}
 						{/* end of dropdown */}
 						{/* <Link href="/bestSeller">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
 								<span>Best Sellers</span>
 							</a>
 						</Link> */}
 
 						<Link href="/contact">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
 								<span>Contact</span>
 							</a>
 						</Link>
 
 						<Link href="/dashboard">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
 								<span>Dashboard</span>
 							</a>
 						</Link>
@@ -175,7 +175,7 @@ const Header = () => {
 						{/* login button menu */}
 						{!currentUser && (
 							<Link href="/login">
-								<a className="lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-semibold items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
+								<a className="font-oswald lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-semibold items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
 									<span>Login</span>
 								</a>
 							</Link>
@@ -184,7 +184,7 @@ const Header = () => {
 						{currentUser && (
 							<Link href="/user-info">
 								<a>
-									<div className="flex items-center font-semibold text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
+									<div className="font-oswald flex items-center font-semibold text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
 										<BiUser className="mr-1" size="1.2rem" />
 										<span>{currentUser.displayName}</span>
 									</div>
