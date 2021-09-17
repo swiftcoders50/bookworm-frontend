@@ -71,9 +71,9 @@ const BestSeller = () => {
 
 	return (
 		// best seller container
-		<div className="mx-2 sm:mx-4 md:mx-16">
+		<div className="mx-3 sm:mx-4 md:mx-16">
 			<div className="flex justify-between my-8 border-b border-gray-200">
-				<h1 className="font-oswald text-2xl md:text-3xl font-semibold text-indigo-900">
+				<h1 className="font-oswald text-xl md:text-2xl font-medium text-indigo-900">
 					Best Seller Books
 				</h1>
 				{/* <Link href="/">
@@ -94,7 +94,7 @@ const BestSeller = () => {
 			{/* load more button */}
 			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
 				<Link href="/">
-					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-semibold ">
+					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-medium ">
 						More Best seller books
 					</a>
 				</Link>

@@ -22,7 +22,7 @@ const Header = () => {
 	return (
 		<>
 			<nav
-				className={`fixed w-full z-10 flex items-center py-3 flex-wrap px-2 md:px-8 lg:px-16 ${
+				className={`fixed w-full z-10 flex items-center py-3 flex-wrap px-3 sm:px-4 md:px-11 ${
 					navbar ? "bg-white shadow-md" : "bg-gray-200"
 				}`}
 			>

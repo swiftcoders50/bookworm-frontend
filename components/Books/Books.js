@@ -17,18 +17,18 @@ const Books = ({ book, handleBuy }) => {
 					/>
 				</div>
 				<div className="flex flex-col justify-around p-2 md:p-3">
-					<h2 className="text-xl text-indigo-900 font-semibold">{book.name}</h2>
-					<p className="font-semibold text-md text-gray-600 my-2 md:my-0">
+					<h2 className="text-xl text-indigo-900 font-medium">{book.name}</h2>
+					<p className="font-medium text-md text-gray-600 my-2 md:my-0">
 						{book.author}
 					</p>
-					<h3 className="text-xl font-bold text-indigo-700 mb-3 md:my-0">
+					<h3 className="text-xl font-bold text-indigo-900 mb-3 md:my-0">
 						${book.price}
 					</h3>
 					<div className="flex items-center justify-between">
 						<a>
 							<button
 								onClick={() => handleBuy(book)}
-								className="bg-indigo-900 hover:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-semibold"
+								className="bg-indigo-900 active:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-medium focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
 							>
 								Add to cart
 							</button>
