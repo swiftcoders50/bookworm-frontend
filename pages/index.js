@@ -38,14 +38,14 @@ export default function Home() {
 			{/* apel */}
 			<BestSeller />
 
-			{/* samiha */}
-			<Categories />
-
 			{/* opu */}
 			<ForeignBooks />
 
 			{/* apel */}
 			<UnreleasedBooks />
+
+			{/* samiha */}
+			<Categories />
 
 			{/* opu */}
 			<Blogs />
