@@ -17,16 +17,20 @@ const blogDetails = () => {
           {newBlogData?.title}
         </span>
 
-        <div className="flex items-center pb-5">
+        <div className="flex items-center pb-5 pt-3">
           <FaCalendar className="text-black" />
           <span className="text-lg text-black pl-2">{newBlogData?.date}</span>
         </div>
 
         {/* this is picture */}
-        <img className="h-96 w-9/12 rounded" src={newBlogData?.img} alt="" />
+        <img
+          className="h-96 md:w-9/12 w-full rounded"
+          src={newBlogData?.img}
+          alt=""
+        />
 
         {/* description */}
-        <div className="mt-5 text-justify">
+        <div className="mt-8 text-justify">
           <div className="flex items-center">
             <FaEdit className="text-black" />
             <span className="text-lg pl-2 text-black font-bold">
@@ -39,7 +43,7 @@ const blogDetails = () => {
             </span>
           </div>
 
-          <div className="text-lg text-gray-500 font-bold mb-8">
+          <div className="text-lg text-gray-500 font-bold mb-8 mt-10">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex animi
             iusto eaque in optio, quidem officiis ipsa id ullam? Perferendis
             ipsam repellat sapiente expedita molestias atque velit veritatis,
