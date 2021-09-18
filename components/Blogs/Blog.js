@@ -5,7 +5,7 @@ const Blog = ({ blog }) => {
 		<div className="shadow bg-gray-50 p-2">
 			<div className="border h-auto overflow-hidden">
 				<img
-					className="w-full object-cover transition duration-1000 ease-in-out transform hover:scale-125"
+					className="w-full cursor-pointer object-cover transition duration-1000 ease-in-out transform hover:scale-125"
 					src={blog.img}
 					alt={blog.name}
 				/>
