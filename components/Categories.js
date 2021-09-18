@@ -1,61 +1,60 @@
 import React from "react";
 import { FaBookOpen } from "react-icons/fa";
-// import { FaBusinessTime, FaBookOpen } from "react-icons/fa";
-// import { GiSkills, GiCutDiamond } from "react-icons/Gi";
 
 const Categories = () => {
-  return (
-    <div className="card-section flex justify-around flex-wrap">
-      {/* business-card */}
-      <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
-        <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <FaBookOpen className="text-4xl text-white" />
-          </div>
-        </div>
-        <div className="business-card-content text-center">
-          <h1 className="mb-2 text-xl font-bold">Business &amp; Finance</h1>
-          <p>Books about Business World</p>
-        </div>
-      </div>
-      {/* self-improvement-card */}
-      <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
-        <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <FaBookOpen className="text-4xl text-white" />
-          </div>
-        </div>
-        <div className="self-improvement-card-content text-center">
-          <h1 className="mb-2 text-xl font-bold">Self Improvement</h1>
-          <p>Books to Motivate Yourself</p>
-        </div>
-      </div>
-      {/* novel-card */}
-      <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
-        <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <FaBookOpen className="text-4xl text-white" />
-          </div>
-        </div>
-        <div className="novel-card-content text-center">
-          <h1 className="mb-2 text-xl font-bold">Novel Telenovela</h1>
-          <p>Books about Great Story</p>
-        </div>
-      </div>
-      {/* skill-card */}
-      <div className="m-5 p-10 min-h-80 w-72 border shadow-sm">
-        <div className="p-5 flex justify-center items-center">
-          <div className="business-card-logo-section py-2 h-12 w-14 bg-indigo-900 flex justify-center items-center rounded-full">
-            <FaBookOpen className="text-4xl text-white" />
-          </div>
-        </div>
-        <div className="skill-card-content text-center">
-          <h1 className="mb-2 text-xl font-bold">Skill in Future</h1>
-          <p>Books about Business World</p>
-        </div>
-      </div>
-    </div>
-  );
+	// dynamic array of categories
+	const categories = [
+		{
+			id: 1,
+			img: "/assets/categories/stats.svg",
+			category: "Business & Finance",
+			subInfo: "Books about Business World",
+		},
+		{
+			id: 2,
+			img: "/assets/categories/career.svg",
+			category: "Self Improvement",
+			subInfo: "Books for Motivation Yourself",
+		},
+		{
+			id: 3,
+			img: "/assets/categories/books.svg",
+			category: "Novel Telenovela",
+			subInfo: "Books about Great Story",
+		},
+		{
+			id: 4,
+			img: "/assets/categories/skill.svg",
+			category: "Skill in Future",
+			subInfo: "Books for Self Preparation",
+		},
+	];
+	return (
+		<div className="my-20">
+			<div className="mx-3 sm:mx-4 md:mx-16">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-8">
+					{categories.map((category) => (
+						<div
+							key={category.id}
+							className="w-full p-5 text-center border rounded-lg bg-white shadow"
+						>
+							<div className="flex justify-center mb-5">
+								<div className="p-2 h-16 w-16 bg-gray-100 rounded-full overflow-hidden">
+									<img src={category.img} alt={category.category} />
+								</div>
+							</div>
+							<div>
+								<h3 className="mb-3 text-gray-800 text-xl font-medium">
+									{category.category}
+								</h3>
+								<p className="text-md text-gray-500">{category.subInfo}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Categories;
