@@ -36,7 +36,7 @@ const Categories = () => {
 					{categories.map((category) => (
 						<div
 							key={category.id}
-							className="w-full p-5 text-center border rounded-lg"
+							className="w-full p-5 text-center border rounded-lg bg-white shadow"
 						>
 							<div className="flex justify-center mb-5">
 								<div className="p-2 h-16 w-16 bg-gray-100 rounded-full overflow-hidden">

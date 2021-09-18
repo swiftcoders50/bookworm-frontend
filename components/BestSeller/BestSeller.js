@@ -11,6 +11,7 @@ const BestSeller = () => {
 			name: "Hate kolome javascript",
 			author: "Zonayed Ahmed",
 			price: 42,
+			favorite: true,
 			img: "/assets/book-images/hate-kolome-javascript-by-zonayed-ahmed.jpg",
 		},
 
@@ -19,6 +20,7 @@ const BestSeller = () => {
 			name: "Computer Programming",
 			author: "Subeen",
 			price: 70,
+			favorite: false,
 			img: "/assets/book-images/computer-programming-data-structure-part-3-by-tamim-shariayer-subben.jpg",
 		},
 		{
@@ -26,6 +28,7 @@ const BestSeller = () => {
 			name: "Computer Programming",
 			author: "Subeen",
 			price: 70,
+			favorite: true,
 			img: "/assets/book-images/recharge_your-down_battery_jhankar_mahbub.jpg",
 		},
 		{
@@ -33,6 +36,7 @@ const BestSeller = () => {
 			name: "Computer Programming",
 			author: "Subeen",
 			price: 70,
+			favorite: false,
 			img: "/assets/book-images/computer-programming-data-structure-part-3-by-tamim-shariayer-subben.jpg",
 		},
 		{
@@ -40,6 +44,7 @@ const BestSeller = () => {
 			name: "Computer Programming",
 			author: "Subeen",
 			price: 70,
+			favorite: false,
 			img: "/assets/book-images/recharge_your-down_battery_jhankar_mahbub.jpg",
 		},
 		{
@@ -47,6 +52,7 @@ const BestSeller = () => {
 			name: "Hate kolome javascript",
 			author: "Zonayed Ahmed",
 			price: 42,
+			favorite: true,
 			img: "/assets/book-images/hate-kolome-javascript-by-zonayed-ahmed.jpg",
 		},
 	];
@@ -77,10 +83,10 @@ const BestSeller = () => {
 					Best Seller Books
 				</h1>
 				{/* <Link href="/">
-          <a className="text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-semibold">
-            View All
-          </a>
-        </Link> */}
+					<a className="font-oswald text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-medium">
+						View All
+					</a>
+				</Link> */}
 			</div>
 
 			{/* best seller Cart container */}
@@ -94,7 +100,7 @@ const BestSeller = () => {
 			{/* load more button */}
 			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
 				<Link href="/">
-					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-lg font-medium ">
+					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-md font-medium">
 						More Best seller books
 					</a>
 				</Link>
