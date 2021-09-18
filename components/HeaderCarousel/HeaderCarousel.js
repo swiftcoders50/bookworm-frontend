@@ -148,7 +148,8 @@ const HeaderCarousel = ({ isVisible }) => {
 									{info.details1} <br /> {info.details2}
 								</p>
 								<button className="font-oswald bg-indigo-900 hover:bg-indigo-800 text-white text-md sm:text-lg uppercase font-bold p-2 rounded-lg">
-									Buy now for &#2547;{info.price}
+									Buy now for <span className="mr-1">&#2547;</span>
+									{info.price}
 								</button>
 							</div>
 							<div className="mt-8">

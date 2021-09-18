@@ -8,14 +8,51 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const UnreleasedBookCarousel = ({ bestBooks }) => {
+	// carousel custom style
+	const customStyle = {
+		display: "block",
+		background: "#C4C0C0",
+		borderRadius: "100%",
+	};
+	// carousel next arrow icon on the right position
+	const SampleNextArrow = (props) => {
+		const { className, style, onClick } = props;
+		return (
+			<div
+				className={className}
+				style={{
+					...style,
+					...customStyle,
+				}}
+				onClick={onClick}
+			/>
+		);
+	};
+	// carousel previous arrow icon on the left position
+	const SamplePrevArrow = (props) => {
+		const { className, style, onClick } = props;
+		return (
+			<div
+				className={className}
+				style={{
+					...style,
+					...customStyle,
+				}}
+				onClick={onClick}
+			/>
+		);
+	};
+
 	// carousel settings
 	const settings = {
-		dots: true,
+		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		initialSlide: 0,
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -23,7 +60,6 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
 					slidesToShow: 3,
 					slidesToScroll: 3,
 					infinite: true,
-					dots: true,
 				},
 			},
 			{
