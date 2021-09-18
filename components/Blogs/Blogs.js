@@ -39,7 +39,7 @@ const Blogs = () => {
 
 	return (
 		<section className="mx-3 sm:mx-4 md:mx-16">
-			<div className="flex justify-between my-4 border-b border-gray-200">
+			<div className="flex justify-between my-8 border-b border-gray-200">
 				<h1 className="font-oswald text-xl md:text-2xl font-medium text-indigo-900">
 					Bookworm Blogs
 				</h1>
@@ -49,7 +49,7 @@ const Blogs = () => {
 					</a>
 				</Link> */}
 			</div>
-			<div className="py-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-14">
 				{blogs.map((blog) => (
 					<Blog key={blog.id} blog={blog}></Blog>
 				))}

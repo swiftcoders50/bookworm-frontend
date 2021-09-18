@@ -59,7 +59,7 @@ const Header = () => {
 				>
 					<div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
 						<Link href="/">
-							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center hover:bg-indigo-900 hover:text-white">
 								<span>Home</span>
 							</a>
 						</Link>
@@ -132,13 +132,13 @@ const Header = () => {
 						</Link> */}
 
 						<Link href="/contact">
-							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 items-center justify-center hover:hover:bg-indigo-900 hover:text-white font-medium tracking-widest">
 								<span>Contact</span>
 							</a>
 						</Link>
 
 						<Link href="/dashboard">
-							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+							<a className="font-oswald lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
 								<span>Dashboard</span>
 							</a>
 						</Link>
@@ -175,7 +175,7 @@ const Header = () => {
 						{/* login button menu */}
 						{!currentUser && (
 							<Link href="/login">
-								<a className="font-oswald lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-semibold items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
+								<a className="font-oswald lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
 									<span>Login</span>
 								</a>
 							</Link>
@@ -184,7 +184,7 @@ const Header = () => {
 						{currentUser && (
 							<Link href="/user-info">
 								<a>
-									<div className="font-oswald flex items-center font-semibold text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
+									<div className="font-oswald flex items-center font-medium tracking-widest text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
 										<BiUser className="mr-1" size="1.2rem" />
 										<span>{currentUser.displayName}</span>
 									</div>

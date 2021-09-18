@@ -2,13 +2,15 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import Link from "next/link";
 const Blog = ({ blog }) => {
 	return (
-		<div>
-			<img
-				className="h-2/4 w-full object-cover mb-3"
-				src={blog.img}
-				alt={blog.name}
-			/>
-			<h4 className="text-gray-800">
+		<div className="shadow bg-gray-50 p-2">
+			<div className="border h-auto overflow-hidden">
+				<img
+					className="w-full object-cover transition duration-1000 ease-in-out transform hover:scale-125"
+					src={blog.img}
+					alt={blog.name}
+				/>
+			</div>
+			<h4 className="text-gray-800 mt-3">
 				<b>By {blog.name}</b>
 			</h4>
 

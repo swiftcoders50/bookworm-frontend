@@ -21,7 +21,7 @@ const Books = ({ book, handleBuy }) => {
 						{book.author}
 					</p>
 					<h3 className="text-xl font-bold text-indigo-900 mb-3 md:my-0">
-						<span>&#2547;</span>
+						<span>$</span>
 						{book.price}
 					</h3>
 					<div className="flex items-center justify-between">
