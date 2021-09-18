@@ -26,9 +26,6 @@ export default function Home() {
 				body {
 					font-family: "Roboto", sans-serif;
 				}
-				.font-oswald {
-					font-family: "Oswald", sans-serif;
-				}
 			`}</style>
 			{/* Google font */}
 
