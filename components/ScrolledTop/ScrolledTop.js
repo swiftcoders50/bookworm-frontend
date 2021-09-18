@@ -25,7 +25,8 @@ const ScrolledTop = (showBelow) => {
       <button
         onClick={handleClick}
         style={{
-          background: "#EF4444",
+          background: "#3735A9",
+          color: "#E5E7EB",
           height: "40px",
           width: "40px",
           textAlign: "center",
