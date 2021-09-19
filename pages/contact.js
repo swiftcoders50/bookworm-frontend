@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FaBeer,
   FaFacebook,
@@ -83,6 +84,7 @@ const contact = () => {
                   </label>
 
                   <input
+                    name="name"
                     type="text"
                     placeholder="Your Name"
                     className="ring-1 ring-indigo-900 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2"
@@ -95,6 +97,7 @@ const contact = () => {
                   </label>
 
                   <input
+                    name="email"
                     type="email"
                     placeholder="Email address"
                     className="ring-1 ring-indigo-900 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2"
@@ -107,14 +110,22 @@ const contact = () => {
                   </label>
 
                   <textarea
+                    name="message"
                     rows="4"
                     placeholder="Your Message"
                     className="ring-1 ring-indigo-900 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2"
                   />
                 </div>
-                <button className="inline-block self-end bg-indigo-900 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm">
+
+                <input
+                  type="submit"
+                  value="Send Message"
+                  className="inline-block self-end bg-indigo-900 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm"
+                />
+
+                {/* <button className="inline-block self-end bg-indigo-900 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm">
                   Send Message
-                </button>
+                </button> */}
               </form>
             </div>
           </div>
