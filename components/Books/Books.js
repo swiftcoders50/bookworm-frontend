@@ -24,7 +24,7 @@ const Books = ({ book, handleBuy }) => {
 					<div className="flex items-center justify-between">
 						<button
 							onClick={() => handleBuy(book)}
-							className="bg-indigo-900 active:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-medium focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
+							className="bg-indigo-900 active:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-medium focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 cursor-auto sm:cursor-pointer"
 						>
 							Add to cart
 						</button>

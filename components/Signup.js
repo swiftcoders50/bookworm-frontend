@@ -69,6 +69,17 @@ const Signup = () => {
 								required
 							/>
 						</div>
+						{/* Phone field
+						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">
+							<div className="mr-1 text-indigo-900 font-bold text-xl">@</div>
+							<input
+								type="phone"
+								ref={phoneRef}
+								placeholder="Enter phone"
+								className="text-lg text-indigo-900 outline-none flex-1"
+								required
+							/>
+						</div> */}
 						{/* password field */}
 						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">
 							<HiLockClosed className="mr-1" size="1.2rem" />
