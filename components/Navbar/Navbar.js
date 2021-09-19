@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 import { useAuth } from "../../contexts/AuthContext";
-import { BiUser } from "react-icons/bi";
+import { BiUser, BiArrowToBottom } from "react-icons/bi";
 
 const Header = () => {
   const { currentUser } = useAuth();
@@ -65,71 +65,58 @@ const Header = () => {
             </Link>
 
             {/* <Link href="/categories">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
-								<div className="flex">
-									<span>Categories</span>
-									<span>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											class="h-6 w-5"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-										>
-											<path
-												fill-rule="evenodd"
-												d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
-												clip-rule="evenodd"
-											/>
-										</svg>
-									</span> 
-								</div>
-							</a>
-						</Link>*/}
+              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
+                <div className="flex">
+                  <span>Categories</span>
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </Link> */}
             {/* this is dropdown */}
             {/* <div class="group inline-block relative">
-							<div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-bold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
-								<span class="mr-1">Categories</span>
-								<svg
-									class="fill-current h-4 w-4"
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 20 20"
-								>
-									<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-								</svg>
-							</div>
-							<ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
-								<li class="">
-									<a
-										class="rounded-t bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
-										href="#"
-									>
-										Story books
-									</a>
-								</li>
-								<li class="">
-									<a
-										class="bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
-										href="#"
-									>
-										Nobel books
-									</a>
-								</li>
-								<li class="">
-									<a
-										class="rounded-b bg-gray-200 text-gray-600 hover:hover:bg-indigo-900 hover:text-white py-3 px-24 block whitespace-no-wrap"
-										href="#"
-									>
-										Text books
-									</a>
-								</li>
-							</ul>
-						</div> */}
+              <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-medium items-center justify-center hover:hover:bg-indigo-900 hover:text-white flex">
+                <span class="mr-1">Categories</span>
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                </svg>
+              </div>
+              <ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                <li class="">
+                  <a
+                    class="rounded-t bg-white text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap border-b-2 border-gray-200"
+                    href="#"
+                  >
+                    Profile
+                  </a>
+                </li>
+                <li class="">
+                  <a
+                    class="rounded-t bg-white text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap"
+                    href="#"
+                  >
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div> */}
             {/* end of dropdown */}
-            {/* <Link href="/bestSeller">
-							<a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
-								<span>Best Sellers</span>
-							</a>
-						</Link> */}
 
             <Link href="/contact">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 items-center justify-center hover:hover:bg-indigo-900 hover:text-white font-medium tracking-widest">
@@ -175,9 +162,36 @@ const Header = () => {
             {/* login button menu */}
             {!currentUser && (
               <Link href="/login">
-                <a className="lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900">
-                  <span>Login</span>
-                </a>
+                <div class="group inline-block relative">
+                  <a className="lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900 cursor-pointer flex">
+                    <span>Login</span>
+                    <svg
+                      class="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </a>
+                  <ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                    <li class="">
+                      <a
+                        class="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap border-b-2 border-gray-400"
+                        href="#"
+                      >
+                        Profile
+                      </a>
+                    </li>
+                    <li class="">
+                      <a
+                        class="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap"
+                        href="#"
+                      >
+                        Logout
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </Link>
             )}
             {/* user name show on the menu */}
