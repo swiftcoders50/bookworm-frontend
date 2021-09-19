@@ -30,7 +30,7 @@ const MyProfile = () => {
 						Name
 					</div>
 					<div className="text-gray-900 bg-gray-100 text-md font-semibold p-3 rounded-md border">
-						{currentUser.displayName}
+						{currentUser?.displayName}
 					</div>
 				</div>
 				<div className="max-w-lg">
@@ -38,7 +38,7 @@ const MyProfile = () => {
 						Email
 					</div>
 					<div className="text-gray-900 bg-gray-100 text-md font-semibold p-3 rounded-md border">
-						{currentUser.email}
+						{currentUser?.email}
 					</div>
 				</div>
 				<div className="max-w-lg">
