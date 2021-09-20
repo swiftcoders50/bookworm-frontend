@@ -2,15 +2,24 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
 const MyProfile = () => {
-	const { currentUser } = useAuth();
+	const { currentUser, passwordUpdate } = useAuth();
 	const [passwordChangedField, setPasswordChangedField] = useState(false);
 	const currentPasswordRef = useRef();
 	const newPasswordRef = useRef();
+	const [message, setMessage] = useState("");
+	const [error, setError] = useState("");
 
 	// password change handler
-	const passwordChangeHandler = (e) => {
-		// console.log(newPasswordRef.current.value);
+	const passwordChangeHandler = async (e) => {
 		e.preventDefault();
+		setMessage("");
+		setError("");
+		try {
+			await passwordUpdate(newPasswordRef.current.value);
+			setMessage("Successfully changed your password!");
+		} catch (error) {
+			setError("Password do not update!");
+		}
 	};
 
 	return (
@@ -41,19 +50,14 @@ const MyProfile = () => {
 						{currentUser?.email}
 					</div>
 				</div>
-				<div className="max-w-lg">
-					<div className="uppercase my-3 text-md font-semibold text-gray-900">
-						Phone
-					</div>
-					<div className="text-gray-900 bg-gray-100 text-md font-semibold p-3 rounded-md border">
-						01739801364
-					</div>
-				</div>
 				{/* Password */}
 				<div className="mt-16 border-b-2">
 					<h3 className="uppercase mb-3 text-md font-semibold text-gray-900">
 						Password
 					</h3>
+					{/* password changed message */}
+					<div className="text-md text-green-600">{message}</div>
+					<div className="text-md text-red-600">{error}</div>
 				</div>
 				<div className="max-w-lg">
 					<div className="flex gap-5 flex-wrap uppercase my-3 text-md font-semibold text-gray-900">
@@ -77,17 +81,6 @@ const MyProfile = () => {
 					className={`max-w-lg ${passwordChangedField ? "block" : "hidden"}`}
 				>
 					<form onSubmit={passwordChangeHandler}>
-						{/* current password */}
-						<div className="flex gap-5 flex-wrap uppercase my-3 text-md font-semibold text-gray-900">
-							<span>Current Password</span>
-						</div>
-						<input
-							type="password"
-							ref={currentPasswordRef}
-							required
-							className="w-full text-gray-900 bg-gray-100 text-md font-semibold p-3 rounded-md border focus:outline-none"
-						/>
-
 						{/* new password */}
 						<div className="flex gap-5 flex-wrap uppercase my-3 text-md font-semibold text-gray-900">
 							<span>New Password</span>
