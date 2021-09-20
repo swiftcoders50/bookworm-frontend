@@ -9,10 +9,12 @@ const Signup = () => {
 	const { signup } = useAuth();
 	const [loading, setLoading] = useState(false);
 	const [message, setMessage] = useState("");
+	const [error, setError] = useState("");
 	const nameRef = useRef();
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const confirmPasswordRef = useRef();
+	const userImageField = useRef();
 
 	// submit user information for signup
 	const handleSubmit = async (e) => {
@@ -22,6 +24,7 @@ const Signup = () => {
 		}
 		try {
 			setMessage("");
+			setError("");
 			setLoading(true);
 			await signup(
 				nameRef.current.value,
@@ -30,7 +33,7 @@ const Signup = () => {
 			);
 			setMessage("Your account has been created successfully");
 		} catch (err) {
-			setMessage("This email already in use another account!");
+			setError("This email already in use another account!");
 		}
 		setLoading(false);
 	};
@@ -45,7 +48,9 @@ const Signup = () => {
 					<h1 className="mb-5 text-3xl text-indigo-900 font-semibold text-center">
 						Sign Up
 					</h1>
-					<div className="text-md text-red-600 font-semibold">{message}</div>
+					{/* show error / message */}
+					<div className="text-md text-green-600 font-semibold">{message}</div>
+					<div className="text-md text-red-600 font-semibold">{error}</div>
 					<form onSubmit={handleSubmit}>
 						{/* name field */}
 						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">
@@ -69,17 +74,7 @@ const Signup = () => {
 								required
 							/>
 						</div>
-						{/* Phone field
-						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">
-							<div className="mr-1 text-indigo-900 font-bold text-xl">@</div>
-							<input
-								type="phone"
-								ref={phoneRef}
-								placeholder="Enter phone"
-								className="text-lg text-indigo-900 outline-none flex-1"
-								required
-							/>
-						</div> */}
+
 						{/* password field */}
 						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">
 							<HiLockClosed className="mr-1" size="1.2rem" />
