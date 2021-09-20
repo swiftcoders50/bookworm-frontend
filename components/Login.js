@@ -8,6 +8,7 @@ import { useAuth } from "../contexts/AuthContext";
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const [message, setMessage] = useState("");
+	const [error, setError] = useState("");
 	const emailRef = useRef();
 	const passwordRef = useRef();
 	const { login } = useAuth();
@@ -17,11 +18,12 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			setMessage("");
+			setError("");
 			setLoading(true);
 			await login(emailRef.current.value, passwordRef.current.value);
-			setMessage("Login successful ✔ ");
+			setMessage("Login successful");
 		} catch (err) {
-			setMessage(err.message);
+			setError(err.message);
 		}
 		setLoading(false);
 	};
@@ -36,7 +38,9 @@ const Login = () => {
 					<h1 className="mb-5 text-3xl text-indigo-900 font-semibold text-center">
 						Log In
 					</h1>
-					<div className="text-md text-red-600 font-semibold">{message}</div>
+					{/* show error / message */}
+					<div className="text-md text-green-600 font-semibold">{message}</div>
+					<div className="text-md text-red-600 font-semibold">{error}</div>
 					<form onSubmit={handleSubmit}>
 						{/* email field */}
 						<div className="my-4 flex items-center border border-gray-300 text-indigo-900 p-2 rounded">

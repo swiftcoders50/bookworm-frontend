@@ -5,7 +5,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { BiUser, BiArrowToBottom } from "react-icons/bi";
 
 const Header = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
   const [cartData, setCardData] = useContext(CartContext);
@@ -167,6 +167,44 @@ const Header = () => {
                 <div className="group inline-block relative">
                   <a className="lg:inline-flex lg:w-auto w-full lg:mt-0 lg:mx-5 px-3 sm:px-4 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center lg:border-2 border-0 border-indigo-900 hover:text-white hover:hover:bg-indigo-900 cursor-pointer flex">
                     <span>Login</span>
+                    {/* <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg> */}
+                  </a>
+
+                  {/* dropDown menu*/}
+                  {/* <ul className="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                  <li className="">
+                    <Link href="/my-profile">
+                      <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400">
+                        Profile
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href="/login">
+                      <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap">
+                        Login
+                      </a>
+                    </Link>
+                  </li>
+                </ul> */}
+                </div>
+              </Link>
+            )}
+
+            {/* user name show on the menu */}
+            {currentUser && (
+              <div className="group inline-block relative">
+                <a>
+                  <div className="flex items-center font-medium tracking-widest text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
+                    <BiUser className="mr-1" size="1.2rem" />
+                    <span>{currentUser.displayName}</span>
+
                     <svg
                       className="fill-current h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -174,71 +212,27 @@ const Header = () => {
                     >
                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                     </svg>
-                  </a>
+                  </div>
+                </a>
 
-                  {/* dropDown menu*/}
-                  <ul className="absolute hidden group-hover:block text-gray-700 lg:pt-5">
-                    <li className="">
-                      <a
-                        className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400"
-                        href="#"
-                      >
+                {/* dropDown menu */}
+                <ul className="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                  <li className="">
+                    <Link href="/my-profile">
+                      <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400">
                         Profile
                       </a>
-                    </li>
-                    <li className="">
-                      <a
-                        className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap"
-                        href="#"
-                      >
-                        Login
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Link>
-            )}
-
-            {/* user name show on the menu */}
-            {currentUser && (
-              <Link href="/user-info">
-                <div className="group inline-block relative">
-                  <a>
-                    <div className="flex items-center font-medium tracking-widest text-indigo-900 lg:border-2 border-0 border-indigo-900 rounded lg:mx-5 px-3 sm:px-3 py-2">
-                      <BiUser className="mr-1" size="1.2rem" />
-                      <span>{currentUser.displayName}</span>
-
-                      <svg
-                        className="fill-current h-4 w-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-                      </svg>
-                    </div>
-                  </a>
-
-                  {/* dropDown menu */}
-                  <ul className="absolute hidden group-hover:block text-gray-700 lg:pt-5">
-                    <li className="">
-                      <a
-                        className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400"
-                        href="#"
-                      >
-                        Profile
-                      </a>
-                    </li>
-                    <li className="">
-                      <a
-                        className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap"
-                        href="#"
-                      >
+                    </Link>
+                  </li>
+                  <li className="">
+                    <button onClick={logout}>
+                      <div className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap">
                         Logout
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Link>
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
             )}
           </div>
         </div>
