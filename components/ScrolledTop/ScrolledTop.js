@@ -21,7 +21,8 @@ const ScrolledTop = (showBelow) => {
   };
 
   return (
-    <div className="absolute right-8 bottom-4">
+    <div className="">
+      {/* <div className="absolute right-4 bottom-4"> */}
       <button
         onClick={handleClick}
         style={{
