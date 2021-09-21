@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { withProtected } from "../hook/route";
 
 const MyProfile = () => {
 	const { currentUser, passwordUpdate } = useAuth();
@@ -104,4 +105,4 @@ const MyProfile = () => {
 	);
 };
 
-export default MyProfile;
+export default withProtected(MyProfile);
