@@ -3,10 +3,7 @@ import Link from "next/link";
 import { BsHeartFill, BsHeart } from "react-icons/bs";
 const Books = ({ book, handleBuy }) => {
 	return (
-		<div
-			key={book.id}
-			className="mx-auto rounded-md shadow overflow-hidden w-72 md:w-full"
-		>
+		<div className="mx-auto rounded-md shadow overflow-hidden w-72 md:w-full">
 			<div className="md:flex h-auto md:h-48 border border-gray-100 bg-gray-20">
 				<div className="flex sm:flex-shrink-0 justify-center p-3 md:p-0">
 					<img
@@ -25,14 +22,12 @@ const Books = ({ book, handleBuy }) => {
 						{book.price}
 					</h3>
 					<div className="flex items-center justify-between">
-						<a>
-							<button
-								onClick={() => handleBuy(book)}
-								className="bg-indigo-900 active:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-medium focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50"
-							>
-								Add to cart
-							</button>
-						</a>
+						<button
+							onClick={() => handleBuy(book)}
+							className="bg-indigo-900 active:bg-indigo-800 inline-block text-white rounded-full text-md px-5 py-1 font-medium focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 cursor-auto sm:cursor-pointer"
+						>
+							Add to cart
+						</button>
 
 						{/* icon */}
 						{book.favorite && (

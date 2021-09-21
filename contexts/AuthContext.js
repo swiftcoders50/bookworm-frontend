@@ -8,6 +8,7 @@ import {
 	getAuth,
 	signOut,
 	updateProfile,
+	updatePassword,
 	onAuthStateChanged,
 	sendPasswordResetEmail,
 	signInWithEmailAndPassword,
@@ -51,6 +52,12 @@ const AuthProvider = ({ children }) => {
 		return sendPasswordResetEmail(auth, email);
 	};
 
+	// update password method
+	const user = auth.currentUser;
+	const passwordUpdate = (newPassword) => {
+		return updatePassword(user, newPassword);
+	};
+
 	// get user information after login
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -65,6 +72,7 @@ const AuthProvider = ({ children }) => {
 		login,
 		logout,
 		currentUser,
+		passwordUpdate,
 		passwordResetEmail,
 	};
 

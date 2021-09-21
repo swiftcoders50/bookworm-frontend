@@ -90,7 +90,7 @@ const ForeignBooks = () => {
 			</div>
 
 			{/* Foreign Cart container */}
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4 cursor-pointer">
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4">
 				{/* cart */}
 				{fBooks.map((book) => (
 					<Books key={book.id} book={book} handleBuy={handleBuy} />
