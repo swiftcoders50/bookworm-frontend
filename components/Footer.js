@@ -4,8 +4,8 @@ import ScrolledTop from "../components/ScrolledTop/ScrolledTop";
 const Footer = () => {
   return (
     <footer>
-      <div className="px-10 pt-10 pb-4 bg-gray-200 text-gray-700 shadow border border-gray-300">
-        <div className="mx-w-7xl mx-auto">
+      <div className="px-10 pt-10 pb-4 bg-gray-50 text-gray-700 shadow border border-gray-300">
+        <div className="mx-w-7xl mx-auto relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             <div className="mb-2">
               <h4 className="mb-2">
@@ -20,13 +20,13 @@ const Footer = () => {
               <br />
             </div>
             <div className="mb-2"></div>
-            <div className="mb-2 relative">
+            <div className="mb-2">
               <h4 className="text-xl mb-2">
                 <strong>Contact Info:</strong>
               </h4>
               <p>Dhaka, Bangladesh.</p>
               <p>Email: swiftcoders50@gmail.com</p>
-              <ScrolledTop />
+              {/* <ScrolledTop /> */}
             </div>
             {/* <div className="mb-4">
               <h4 className="text-xl">
@@ -129,7 +129,7 @@ const Footer = () => {
             </div> */}
           </div>
           {/* jahid */}
-          {/* <ScrolledTop /> */}
+          <ScrolledTop className="absolute right-4 bottom-4" />
           <hr className="mt-2 border-gray-300" />
           <div className="my-2 text-center">
             <p className="text-gray-800">

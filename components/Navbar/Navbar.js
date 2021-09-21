@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <nav
         className={`fixed w-full z-10 flex items-center py-3 flex-wrap px-3 shadow border border-gray-300 sm:px-4 md:px-11 ${
-          navbar ? "bg-gray-200" : "bg-gray-200"
+          navbar ? "bg-gray-50" : "bg-gray-50"
         }`}
       >
         <Link href="/">
