@@ -57,12 +57,12 @@ const ForeignBooks = () => {
 		},
 	];
 
-	const [cartData, setCardData] = useContext(CartContext);
+	const [cartData, setCartData] = useContext(CartContext);
 	const handleBuy = (singleBook) => {
 		let isAdded = false;
 		if (cartData.length == 0) {
 			singleBook = { ...singleBook, quantity: 1 };
-			setCardData([...cartData, singleBook]);
+			setCartData([...cartData, singleBook]);
 		}
 		cartData.map((item) => {
 			if (item.id == singleBook.id) {
@@ -71,7 +71,7 @@ const ForeignBooks = () => {
 		});
 		if (!isAdded) {
 			singleBook = { ...singleBook, quantity: 1 };
-			setCardData([...cartData, singleBook]);
+			setCartData([...cartData, singleBook]);
 		}
 	};
 

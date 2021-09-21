@@ -8,7 +8,7 @@ const Header = () => {
   const { currentUser, logout } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  const [cartData, setCardData] = useContext(CartContext);
+  const [cartData, setCartData] = useContext(CartContext);
   const changeBackground = () => {
     if (window.scrollY >= 70) {
       setNavbar(true);

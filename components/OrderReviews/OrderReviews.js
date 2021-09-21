@@ -36,7 +36,7 @@ const OrderReviews = () => {
     const handlePlusMinus = (id,quantity) => {
       let newCart;
       cartData.map(item => {
-        if (id == item.id) {
+        if (id === item.id) {
           newCart = {...item,quantity:quantity};
         }
       })

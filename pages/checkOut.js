@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const checkOut = () => {
-    const [cartData, setCardData, cartTotal ,setCartTotal] = useContext(CartContext);
+    const [cartData, setCartData, cartTotal ,setCartTotal] = useContext(CartContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const router = useRouter()
     const onSubmit = data => {
