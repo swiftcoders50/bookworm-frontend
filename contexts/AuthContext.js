@@ -68,6 +68,7 @@ const AuthProvider = ({ children }) => {
 	});
 
 	const value = {
+		auth,
 		signup,
 		login,
 		logout,
