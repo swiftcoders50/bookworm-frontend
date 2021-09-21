@@ -1,4 +1,5 @@
 import React from "react";
+import * as emailjs from "emailjs-com";
 
 import {
   FaBeer,
@@ -13,6 +14,49 @@ import {
 } from "react-icons/fa";
 
 const contact = () => {
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm(
+  //       "gmail",
+  //       "template_0oegcxu",
+  //       form.current,
+  //       "user_LHsecyZ4rBf2T3jCUlWO9"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  // };
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7wgnz3q",
+        "template_0oegcxu",
+        e.target,
+        "user_LHsecyZ4rBf2T3jCUlWO9"
+      )
+      .then(
+        (result) => {
+          if (result) {
+            alert("your message successfully sent!");
+          }
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
   return (
     <div className="antialiased bg-gray-100 pt-20  sm:pb-0 pb-24 lg:pb-18">
       <div className="flex w-full min-h-screen justify-center items-center">
@@ -77,7 +121,7 @@ const contact = () => {
           {/* contact form */}
           <div className="relative">
             <div className="bg-white rounded-xl shadow-lg p-8 text-indigo-900 md:w-80">
-              <form className="flex flex-col space-y-4">
+              <form className="flex flex-col space-y-4" onSubmit={sendEmail}>
                 <div>
                   <label for="" className="text-sm">
                     Your Name
