@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 
 import {
@@ -14,25 +14,7 @@ import {
 } from "react-icons/fa";
 
 const contact = () => {
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs
-  //     .sendForm(
-  //       "gmail",
-  //       "template_0oegcxu",
-  //       form.current,
-  //       "user_LHsecyZ4rBf2T3jCUlWO9"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  // };
+  const [successMsg, setSuccessMsg] = useState("");
 
   function sendEmail(e) {
     e.preventDefault();
@@ -47,7 +29,8 @@ const contact = () => {
       .then(
         (result) => {
           if (result) {
-            alert("your message successfully sent!");
+            // alert("your message successfully sent!");
+            setSuccessMsg("your message successfully sent!");
           }
           console.log(result.text);
         },
@@ -167,9 +150,11 @@ const contact = () => {
                   className="inline-block self-end bg-indigo-900 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm"
                 />
 
-                {/* <button className="inline-block self-end bg-indigo-900 text-white font-bold rounded-lg px-6 py-2 uppercase text-sm">
-                  Send Message
-                </button> */}
+                {
+                  <h1 className=" text-green-900 text-base font-bold">
+                    {successMsg}
+                  </h1>
+                }
               </form>
             </div>
           </div>
