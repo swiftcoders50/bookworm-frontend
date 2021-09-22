@@ -7,6 +7,7 @@ import { CartContext } from "../../pages/_app";
 const OrderReviews = () => {
       const [cartData, setCartData, cartTotal ,setCartTotal, orderData, setOrderData] = useContext(CartContext);
       const [books, setBooks] = useState(cartData);
+      console.log(books);
       const [totalPrice,setTotalPrice] = useState(0);
       const [shippingPrice,setShippingPrice] = useState(50);
       setCartTotal(totalPrice);
@@ -24,7 +25,7 @@ const OrderReviews = () => {
         setShippingPrice(0);
       }
       cartData.map((book) => {
-         total = book.price*book.quantity;
+         total = book.bookPrice*book.quantity;
          subTotal = subTotal + total;
         setTotalPrice(subTotal);
         
@@ -35,11 +36,11 @@ const OrderReviews = () => {
     const handlePlusMinus = (id,quantity) => {
       let newCart;
       cartData.map(item => {
-        if (id === item.id) {
+        if (id === item._id) {
           newCart = {...item,quantity:quantity};
         }
       })
-      let newData = cartData.filter(item => item.id != id)
+      let newData = cartData.filter(item => item._id != id)
       newData = [...newData,newCart];
       setCartData(newData);
     }
@@ -47,7 +48,7 @@ const OrderReviews = () => {
     // Delete items from cart
     const deleteItem = (id) => {
       console.log(id);
-      let newData = cartData.filter(item => item.id != id)
+      let newData = cartData.filter(item => item._id != id)
       console.log(newData);
       setCartData(newData);
       setBooks(newData);
@@ -61,7 +62,7 @@ const OrderReviews = () => {
 
             <div  className="col-span-3">
           {
-            books.map((book) => (<OrderReview key={book.id} book={book} handlePlusMinus = {handlePlusMinus} deleteItem = {deleteItem}></OrderReview>))
+            books.map((book) => (<OrderReview key={book._id} book={book} handlePlusMinus = {handlePlusMinus} deleteItem = {deleteItem}></OrderReview>))
           }
           </div>
           

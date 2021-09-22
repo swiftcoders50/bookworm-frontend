@@ -8,13 +8,14 @@ const ForeignBooks = ({ books }) => {
 
 	const [cartData, setCartData] = useContext(CartContext);
 	const handleBuy = (singleBook) => {
+		console.log(singleBook);
 		let isAdded = false;
-		if (cartData.length == 0) {
+		if (cartData.length === 0) {
 			singleBook = { ...singleBook, quantity: 1 };
 			setCartData([...cartData, singleBook]);
 		}
 		cartData.map((item) => {
-			if (item.id == singleBook.id) {
+			if (item._id === singleBook._id) {
 				isAdded = true;
 			}
 		});
