@@ -9,7 +9,20 @@ import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 
-export default function Home() {
+// fetch books
+export async function getStaticProps() {
+	const [bestSellerBooksRes, foreignBooksRes] = await Promise.all([
+		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
+		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
+	]);
+	const [bestSellerBook, foreignBooks] = await Promise.all([
+		bestSellerBooksRes.json(),
+		foreignBooksRes.json(),
+	]);
+	return { props: { bestSellerBook, foreignBooks } };
+}
+
+export default function Home({ bestSellerBook, foreignBooks }) {
 	return (
 		<div>
 			<Head>
@@ -33,10 +46,10 @@ export default function Home() {
 			<HeaderCarousel />
 
 			{/* apel */}
-			<BestSeller />
+			<BestSeller books={bestSellerBook} />
 
 			{/* opu */}
-			<ForeignBooks />
+			<ForeignBooks books={foreignBooks} />
 
 			{/* apel */}
 			<UnreleasedBooks />
