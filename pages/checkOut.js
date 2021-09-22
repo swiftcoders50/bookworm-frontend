@@ -5,62 +5,67 @@ import { CartContext } from "./_app";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { withProtected } from "../hook/route";
+import { useAuth } from './../contexts/AuthContext';
 
 const checkOut = () => {
-	const [cartData, setCardData, cartTotal, setCartTotal] =
-		useContext(CartContext);
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm();
-	const router = useRouter();
-	const onSubmit = (data) => {
-		console.log(data);
-		if (data.payment == "card") {
-			router.push("/confirmPayment");
-		} else {
-			router.push("/orderComplete");
-		}
-	};
-	return (
-		<div className="py-32">
-			<div className="w-4/5 mx-auto">
-				<div>
-					<form onSubmit={handleSubmit(onSubmit)}>
-						<div className="grid md:grid-cols-2 gap-12">
-							<div>
-								<div className="p-3 bg-gray-100 rounded-full my-3">
-									<h1 class="ml-2 font-semibold text-teal-600 uppercase">
-										Enter Shipping Information
-									</h1>
-								</div>
-								<input
-									className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
-									placeholder="Name"
-									{...register("name", { required: true })}
-								/>
-								<br />
-								<input
-									className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
-									placeholder="Email"
-									{...register("email", { required: true })}
-								/>
-								<br />
-								<input
-									className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
-									placeholder="Phone"
-									{...register("phone", { required: true })}
-								/>
-								<br />
-								<input
-									className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
-									placeholder="Address"
-									{...register("address", { required: true })}
-								/>
-								<br />
-							</div>
+const {currentUser} = useAuth();
+const [cartData, setCartData, cartTotal ,setCartTotal, orderData, setOrderData] = useContext(CartContext);    
+const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const router = useRouter()
+
+    const onSubmit = data => {
+        console.log(data);
+
+        const shippingData = data;
+
+        const paymentData = {
+            paymentMethod: data.payment,
+            totalPrice: cartTotal+50
+        }
+        const userData = {
+            userId: "12345",
+            userEmail: "example@example.com",
+            userName: "john doe"
+        }
+        const newOrderData = [{userData}, {orderData: cartData}, {paymentData},{shippingData}];
+        setOrderData(newOrderData);
+        console.log(newOrderData);
+
+        if (data.payment === "card"){
+            // router.push("/confirmPayment");
+        }
+        else {
+            
+
+			const url = `http://localhost:5000/orders/addOrders`;
+        fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newOrderData)
+        })
+        .then(response => response.json())
+        .then(data =>console.log(data))
+
+
+
+        // router.push("/orderComplete");
+        }
+    }
+    return (
+        <div className="py-32">
+            <div className="w-4/5 mx-auto">
+            <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+               <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                 <div className="p-3 bg-gray-100 rounded-full my-3">
+                 <h1 class="ml-2 font-semibold text-teal-600 uppercase">Enter Shipping Information</h1>
+                 </div>
+                 <input className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full" placeholder="Name" {...register("name", { required: true })} /><br/>
+                 <input className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full" placeholder="Email" {...register("email", { required: true })} /><br/>
+                 <input className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full" placeholder="Phone" {...register("phone", { required: true })} /><br/>
+                 <input className="px-3 py-4 my-1 border-b border-teal-300 placeholder-gray-500 text-blueGray-600 relative tracking-wide rounded-lg bg-white text-base shadow outline-none focus:outline-none focus:shadow-outline w-full" placeholder="Address" {...register("address", { required: true })} /><br/>
+                 </div>
 
 							<div>
 								<div className="p-3 bg-gray-100 rounded-full my-3">
