@@ -9,17 +9,20 @@ import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 
-// fetch foreign books
-export const getStaticProps = async () => {
-	const res = await fetch("http://localhost:5000/books/foreign-books");
-	const data = await res.json();
+// fetch books
+export async function getStaticProps() {
+	const [bestSellerBooksRes, foreignBooksRes] = await Promise.all([
+		fetch("http://localhost:5000/books/best-seller-books"),
+		fetch("http://localhost:5000/books/foreign-books"),
+	]);
+	const [bestSellerBook, foreignBooks] = await Promise.all([
+		bestSellerBooksRes.json(),
+		foreignBooksRes.json(),
+	]);
+	return { props: { bestSellerBook, foreignBooks } };
+}
 
-	return {
-		props: { foreignBooks: data },
-	};
-};
-
-export default function Home({ foreignBooks }) {
+export default function Home({ bestSellerBook, foreignBooks }) {
 	return (
 		<div>
 			<Head>
@@ -43,7 +46,7 @@ export default function Home({ foreignBooks }) {
 			<HeaderCarousel />
 
 			{/* apel */}
-			<BestSeller />
+			<BestSeller books={bestSellerBook} />
 
 			{/* opu */}
 			<ForeignBooks books={foreignBooks} />
