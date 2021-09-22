@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ScrolledTop from "../components/ScrolledTop/ScrolledTop";
+import LiveChat from "../components/LiveChat/LiveChat";
 
 const Footer = () => {
   return (
@@ -138,6 +139,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <LiveChat />
     </footer>
   );
 };
