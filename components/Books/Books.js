@@ -7,7 +7,7 @@ const Books = ({ book, handleBuy }) => {
 			<div className="md:flex h-auto md:h-48 border border-gray-100 bg-gray-20">
 				<div className="flex sm:flex-shrink-0 justify-center p-3 md:p-0">
 					<img
-						className="h-48 w-auto md:w-32 md:h-full  object-cover"
+						className="h-48 w-auto md:w-32 md:h-full rounded object-cover"
 						src={book.bookImg}
 						alt={book.authorName}
 					/>

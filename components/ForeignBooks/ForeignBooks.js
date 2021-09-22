@@ -5,57 +5,6 @@ import React, { useContext } from "react";
 
 const ForeignBooks = ({ books }) => {
 	// demo array of books
-	const fBooks = [
-		{
-			id: 1,
-			name: "Origin",
-			author: "Dan Brown",
-			price: 99,
-			favorite: false,
-			img: "/assets/book-images/origin.jpg",
-		},
-		{
-			id: 2,
-			name: "The Subtle Art of Not Givig A Fck",
-			author: "Marijn Haverbake",
-			price: 70,
-			favorite: false,
-			img: "/assets/book-images/subtleArt.jpg",
-		},
-
-		{
-			id: 4,
-			name: "The Da Vinci Code",
-			author: "Dan Brown",
-			price: 80,
-			favorite: false,
-			img: "/assets/book-images/vinci.jpg",
-		},
-		{
-			id: 5,
-			name: "Half Girlfriend",
-			author: "Chetan Bhagat",
-			price: 50,
-			favorite: true,
-			img: "/assets/book-images/hgf.jpg",
-		},
-		{
-			id: 6,
-			name: "Shophie's World",
-			author: "Jostien Gaarder",
-			price: 70,
-			favorite: false,
-			img: "/assets/book-images/sophie-s-world.jpg",
-		},
-		{
-			id: 7,
-			name: "The Girl In Room 105",
-			author: "Chetan Bhagat",
-			price: 50,
-			favorite: true,
-			img: "/assets/book-images/105.jpg",
-		},
-	];
 
 	const [cartData, setCardData] = useContext(CartContext);
 	const handleBuy = (singleBook) => {
