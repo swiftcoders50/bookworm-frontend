@@ -32,7 +32,7 @@ const { register, handleSubmit, watch, formState: { errors } } = useForm();
         console.log(newOrderData);
 
         if (data.payment === "card"){
-            // router.push("/confirmPayment");
+            router.push("/confirmPayment");
         }
         else {
             
@@ -48,7 +48,7 @@ const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
 
 
-        // router.push("/orderComplete");
+        router.push("/orderComplete");
         }
     }
     return (
