@@ -14,6 +14,7 @@ const OrderReviews = () => {
 
       useEffect(() => {
        sumOfPrice();
+       
      },[cartData])
 
     //  Product price calculation

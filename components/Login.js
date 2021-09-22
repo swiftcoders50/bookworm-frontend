@@ -4,6 +4,7 @@ import { CgMail } from "react-icons/cg";
 import { HiLockClosed } from "react-icons/hi";
 import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
+import { withPublic } from "../hook/route";
 
 const Login = () => {
 	const [loading, setLoading] = useState(false);
@@ -95,4 +96,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default withPublic(Login);
