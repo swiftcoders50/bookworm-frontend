@@ -9,7 +9,17 @@ import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 
-export default function Home() {
+// fetch foreign books
+export const getStaticProps = async () => {
+	const res = await fetch("http://localhost:5000/books/foreign-books");
+	const data = await res.json();
+
+	return {
+		props: { foreignBooks: data },
+	};
+};
+
+export default function Home({ foreignBooks }) {
 	return (
 		<div>
 			<Head>
@@ -36,7 +46,7 @@ export default function Home() {
 			<BestSeller />
 
 			{/* opu */}
-			<ForeignBooks />
+			<ForeignBooks books={foreignBooks} />
 
 			{/* apel */}
 			<UnreleasedBooks />

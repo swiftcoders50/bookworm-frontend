@@ -8,18 +8,20 @@ const Books = ({ book, handleBuy }) => {
 				<div className="flex sm:flex-shrink-0 justify-center p-3 md:p-0">
 					<img
 						className="h-48 w-auto md:w-32 md:h-full  object-cover"
-						src={book.img}
-						alt={book.name}
+						src={book.bookImg}
+						alt={book.authorName}
 					/>
 				</div>
 				<div className="flex flex-col justify-around p-2 md:p-3 w-full">
-					<h2 className="text-xl text-indigo-900 font-medium">{book.name}</h2>
+					<h2 className="text-xl text-indigo-900 font-medium">
+						{book.bookName}
+					</h2>
 					<p className="font-medium text-md text-gray-600 my-2 md:my-0">
-						{book.author}
+						{book.authorName}
 					</p>
 					<h3 className="text-xl font-bold text-indigo-900 mb-3 md:my-0">
 						<span>$</span>
-						{book.price}
+						{book.bookPrice}
 					</h3>
 					<div className="flex items-center justify-between">
 						<button

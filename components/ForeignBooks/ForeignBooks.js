@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 import React, { useContext } from "react";
 
-const ForeignBooks = () => {
+const ForeignBooks = ({ books }) => {
 	// demo array of books
 	const fBooks = [
 		{
@@ -92,8 +92,8 @@ const ForeignBooks = () => {
 			{/* Foreign Cart container */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4">
 				{/* cart */}
-				{fBooks.map((book) => (
-					<Books key={book.id} book={book} handleBuy={handleBuy} />
+				{books.map((book) => (
+					<Books key={book._id} book={book} handleBuy={handleBuy} />
 				))}
 			</div>
 
