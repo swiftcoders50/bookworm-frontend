@@ -12,8 +12,8 @@ import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 // fetch books
 export async function getStaticProps() {
 	const [bestSellerBooksRes, foreignBooksRes] = await Promise.all([
-		fetch("http://localhost:5000/books/best-seller-books"),
-		fetch("http://localhost:5000/books/foreign-books"),
+		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
+		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
 	]);
 	const [bestSellerBook, foreignBooks] = await Promise.all([
 		bestSellerBooksRes.json(),
