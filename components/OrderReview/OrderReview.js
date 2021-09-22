@@ -1,7 +1,7 @@
 import React from "react";
 import { FaPlus, FaMinus, FaRegTrashAlt } from "react-icons/fa";
 import { useState } from "react";
-import { useEffect } from "react";
+
 
 const OrderReview = ({ book, handlePlusMinus, deleteItem }) => {
 	const [quantity, setQuantity] = useState(book.quantity);
@@ -44,7 +44,7 @@ const OrderReview = ({ book, handlePlusMinus, deleteItem }) => {
 									/>
 								</button>
 								<input
-									class="mx-2 text-center w-4 font-medium text-gray-800"
+									className="mx-2 text-center w-4 font-medium text-gray-800"
 									type="text"
 									value={quantity}
 								/>

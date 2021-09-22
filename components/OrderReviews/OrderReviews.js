@@ -5,13 +5,11 @@ import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 
 const OrderReviews = () => {
-      const [cartData, setCartData, cartTotal ,setCartTotal] = useContext(CartContext);
+      const [cartData, setCartData, cartTotal ,setCartTotal, orderData, setOrderData] = useContext(CartContext);
       const [books, setBooks] = useState(cartData);
       const [totalPrice,setTotalPrice] = useState(0);
       const [shippingPrice,setShippingPrice] = useState(50);
       setCartTotal(totalPrice);
-
-
       useEffect(() => {
        sumOfPrice();
        
@@ -54,6 +52,7 @@ const OrderReviews = () => {
       setCartData(newData);
       setBooks(newData);
     }
+
 
     return (
         <div>

@@ -9,11 +9,12 @@ function MyApp({ Component, pageProps }) {
 	const [cartData, setCartData] = useState([]);
 	const [cartTotal, setCartTotal] = useState(0);
 	const [blogData, setBlogData] = useState([]);
+	const [orderData, setOrderData] = useState([]);
 	return (
 		<AuthProvider>
 			<BlogContext.Provider value={[blogData, setBlogData]}>
 				<CartContext.Provider
-					value={[cartData, setCartData, cartTotal, setCartTotal]}
+					value={[cartData, setCartData, cartTotal, setCartTotal, orderData, setOrderData]}
 				>
 					<Layout>
 						<Component {...pageProps} />
