@@ -7,7 +7,7 @@ import Link from "next/link";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const UnreleasedBookCarousel = ({ bestBooks }) => {
+const UnreleasedBookCarousel = ({ unreleasedBooks }) => {
 	// carousel custom style
 	const customStyle = {
 		display: "block",
@@ -83,18 +83,14 @@ const UnreleasedBookCarousel = ({ bestBooks }) => {
 	return (
 		<div className="text-center">
 			<Slider {...settings}>
-				{bestBooks.map((book) => (
-					<Link href="/" key={book.id}>
-						<a className="mx-2 inline-block">
-							<Image
-								src={book.img}
-								width="180"
-								height="215"
-								objectFit="cover"
-								alt="book name"
-							/>
-						</a>
-					</Link>
+				{unreleasedBooks.map((book) => (
+					<div className="mx-2 inline-block">
+						<img
+							className="h-60 w-48 object-cover"
+							src={book.bookImg}
+							alt={book.bookName}
+						/>
+					</div>
 				))}
 			</Slider>
 		</div>
