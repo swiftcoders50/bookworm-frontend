@@ -44,38 +44,36 @@ const blogDetails = () => {
           </div>
 
           <div className="text-lg text-gray-500 font-bold mb-8 mt-10">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex animi
-            iusto eaque in optio, quidem officiis ipsa id ullam? Perferendis
-            ipsam repellat sapiente expedita molestias atque velit veritatis,
-            rerum dolore sit? Illum magni alias modi laborum amet dolorum,
-            laboriosam suscipit beatae temporibus inventore recusandae officiis
-            cumque quidem aperiam vel id!
+            A professor at the University of Minnesota, blogger John Pistelli
+            holds a PhD in English literature; he has published several works of
+            fiction and poetry, including a novel (Portraits and Ashes). The
+            thoughtful, artful articles and musings he shares with his followers
+            aren't driven by hot topics or current events—they are anchored by
+            his personal interests in classic and contemporary fiction. This
+            book review blog features poetry, drama, and nonfiction, along with
+            works of various other genres. Readers can look forward to
+            approximately one new review per week.
           </div>
 
           <div className="text-lg text-gray-500 font-bold mb-8">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-            nisi est molestiae natus aperiam officia voluptates corrupti iusto
-            labore, voluptate corporis officiis voluptatum a beatae vitae quo
-            assumenda modi minima eos aspernatur quisquam, optio repellendus,
-            sit architecto. Nihil quis eveniet officiis commodi illum eligendi
-            repellat sed mollitia quas voluptate vitae odio, qui inventore totam
-            iure iusto laudantium alias expedita incidunt cum illo. Delectus
-            vero enim veritatis magni porro esse dignissimos voluptatibus quod
-            repudiandae quia! Error sunt veniam itaque sequi, ipsam non!
-            Necessitatibus ab sit sequi maxime odit. Numquam, repellat qui.
+            Blogger Susan Osborne has done it all—she has worked in book sales,
+            as a writer, and as a magazine editor. As she puts it, her aims are
+            to "select snippets of book news that interest [her], talk about
+            some of the books [she's] just read and alert readers to titles that
+            might not find themselves in the glare of the publicity spotlight."
+            Look to this blog for topical book news, thoughtful reviews,
+            lovingly selected recommendations, and other musings of a woman
+            happily mired in the world of literature.
           </div>
 
           <div className="text-lg text-gray-500 font-bold mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-            aperiam odit debitis voluptas expedita accusantium corrupti
-            cupiditate ipsam perspiciatis hic! A possimus unde velit nam tempore
-            soluta excepturi consequatur, ducimus corporis dolore esse
-            exercitationem adipisci nisi tenetur. Iusto minima ea magni ratione
-            exercitationem nihil unde eum ducimus? Voluptate exercitationem, hic
-            sapiente magni odit fugit similique! Provident ipsam sint quo.
-            Mollitia, minima tempora quod rerum sed, exercitationem corporis,
-            ducimus aut numquam amet sequi maxime? Itaque repudiandae aspernatur
-            assumenda commodi explicabo quo.
+            This blog features "curated collections of the best stories this
+            planet has to offer." You will get lost scrolling through the
+            available posts promising content such as "50 Subgenres and Their
+            Must-Reads." Their posts follow trending, relevant topics in the
+            literary world with a dash of lifestyle on the side. Their site also
+            includes lists of book recommendations and newly published works
+            just waiting to be discovered.
           </div>
         </div>
         {/* end Description */}
