@@ -11,6 +11,7 @@ import {
   FaSkype,
   FaTwitter,
   FaInstagram,
+  FaGithub,
 } from "react-icons/fa";
 
 const contact = () => {
@@ -51,8 +52,7 @@ const contact = () => {
               <p className="pt-2 text-white text-sm">
                 We would like to be easily accessible and to be available to our
                 customers, potential clients and prospective employees. Whenever
-                necessary, you just need to complete the following form. You
-                can, also, visit any of our offices listed below.
+                necessary, you just need to complete the following form.
               </p>
             </div>
             {/*contact info icon */}
@@ -89,7 +89,11 @@ const contact = () => {
                 <FaFacebook size="2rem" />
               </a>
 
-              <a href="https://www.facebook.com/profile.php?id=100053979214073">
+              <a href="https://github.com/Swift-Coders-BD/bookworm-project-frontend">
+                <FaGithub size="2rem" />
+              </a>
+
+              {/* <a href="https://www.facebook.com/profile.php?id=100053979214073">
                 <FaSkype size="2rem" />
               </a>
 
@@ -99,7 +103,7 @@ const contact = () => {
 
               <a href="https://www.facebook.com/profile.php?id=100053979214073">
                 <FaInstagram size="2rem" />
-              </a>
+              </a> */}
             </div>
           </div>
 
