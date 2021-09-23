@@ -12,7 +12,6 @@ const {currentUser} = useAuth();
 const [cartData, setCartData, cartTotal ,setCartTotal, orderData, setOrderData] = useContext(CartContext);    
 const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const router = useRouter()
-
     const onSubmit = data => {
         console.log(data);
 
@@ -22,12 +21,12 @@ const { register, handleSubmit, watch, formState: { errors } } = useForm();
             paymentMethod: data.payment,
             totalPrice: cartTotal+50
         }
+		
         const userData = {
-            userId: "12345",
-            userEmail: "example@example.com",
-            userName: "john doe"
+            userEmail: currentUser.email,
+            userName: currentUser.displayName
         }
-        const newOrderData = [{userData}, {orderData: cartData}, {paymentData},{shippingData}];
+        const newOrderData = {userData, orderData: cartData, paymentData,shippingData, status: "pending"};
         setOrderData(newOrderData);
         console.log(newOrderData);
 
@@ -37,7 +36,7 @@ const { register, handleSubmit, watch, formState: { errors } } = useForm();
         else {
             
 
-			const url = `http://localhost:5000/orders/addOrders`;
+			const url = `https://bookworm-backend.vercel.app/orders/addOrders`;
         fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
