@@ -49,8 +49,10 @@ const contact = () => {
             <div>
               <h1 className="font-bold text-4xl tracking-wide">Contact Us</h1>
               <p className="pt-2 text-white text-sm">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
-                rerum temporibus magnam!
+                We would like to be easily accessible and to be available to our
+                customers, potential clients and prospective employees. Whenever
+                necessary, you just need to complete the following form. You
+                can, also, visit any of our offices listed below.
               </p>
             </div>
             {/*contact info icon */}
@@ -61,7 +63,7 @@ const contact = () => {
                   size="1.2rem"
                   color="white"
                 />
-                <span>+0000 123 456 789</span>
+                <span>+8801938901990</span>
               </div>
 
               <div className="inline-flex space-x-2 items-center">
@@ -70,7 +72,7 @@ const contact = () => {
                   size="1.2rem"
                   color="white"
                 />
-                <span>info@example.com</span>
+                <span>swiftCoders50@gmail.com</span>
               </div>
 
               <div className="inline-flex space-x-2 items-center">
@@ -79,24 +81,24 @@ const contact = () => {
                   size="1.2rem"
                   color="white"
                 />
-                <span>1203 Town Center Drive FL 33458 BD</span>
+                <span>Dhaka-1214, Bangladesh</span>
               </div>
             </div>
             <div className="flex space-x-4 text-lg">
-              <a href="#">
-                <FaFacebook />
+              <a href="https://www.facebook.com/profile.php?id=100053979214073">
+                <FaFacebook size="2rem" />
               </a>
 
-              <a href="#">
-                <FaSkype />
+              <a href="https://www.facebook.com/profile.php?id=100053979214073">
+                <FaSkype size="2rem" />
               </a>
 
-              <a href="#">
-                <FaTwitter />
+              <a href="https://www.facebook.com/profile.php?id=100053979214073">
+                <FaTwitter size="2rem" />
               </a>
 
-              <a href="#">
-                <FaInstagram />
+              <a href="https://www.facebook.com/profile.php?id=100053979214073">
+                <FaInstagram size="2rem" />
               </a>
             </div>
           </div>

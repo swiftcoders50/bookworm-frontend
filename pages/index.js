@@ -11,18 +11,26 @@ import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 
 // fetch books
 export async function getStaticProps() {
-	const [bestSellerBooksRes, foreignBooksRes] = await Promise.all([
-		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
-		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
-	]);
-	const [bestSellerBook, foreignBooks] = await Promise.all([
+	const [bestSellerBooksRes, foreignBooksRes, unreleasedBooksRes] =
+		await Promise.all([
+			fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
+			fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
+			fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
+		]);
+
+	const [bestSellerBook, foreignBooks, unreleasedBooks] = await Promise.all([
 		bestSellerBooksRes.json(),
 		foreignBooksRes.json(),
+		unreleasedBooksRes.json(),
 	]);
-	return { props: { bestSellerBook, foreignBooks } };
+	return { props: { bestSellerBook, foreignBooks, unreleasedBooks } };
 }
 
-export default function Home({ bestSellerBook, foreignBooks }) {
+export default function Home({
+	bestSellerBook,
+	foreignBooks,
+	unreleasedBooks,
+}) {
 	return (
 		<div>
 			<Head>
@@ -52,7 +60,7 @@ export default function Home({ bestSellerBook, foreignBooks }) {
 			<ForeignBooks books={foreignBooks} />
 
 			{/* apel */}
-			<UnreleasedBooks />
+			<UnreleasedBooks books={unreleasedBooks} />
 
 			{/* samiha */}
 			<Categories />
