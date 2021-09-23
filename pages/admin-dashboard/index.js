@@ -28,24 +28,15 @@ const index = () => {
 
   const newBookInfoHandler = (e) => {
     e.preventDefault();
-    console.log(newBookInfo);
 
-    // fetch(`https://bookworm-backend.vercel.app/books/addNewBook`, {
-    //   method: "POST",
-    //   body: JSON.stringify({ newBookInfo }),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    axios({
-      method: "post",
-      url: "https://bookworm-backend.vercel.app/books/addNewBook",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
+    fetch("https://bookworm-backend.vercel.app/books/addNewBook", {
+      method: "POST",
+      body: JSON.stringify({ ...newBookInfo }),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         newBookRef.current.innerText = data.message;
         setTimeout(() => {
           newBookRef.current.innerText = "";
@@ -202,11 +193,14 @@ const index = () => {
                   required
                 />
                 <input
-                  className="mb-4 p-2 pl-4 text-lg block border border-gray-300 rounded placeholder-gray-400 text-gray-800 text-sm outline-none focus:outline-none w-full cursor-pointer hover:bg-indigo-800 hover:text-gray-50"
+                  className="mb-4 p-2 pl-4 text-sm block border border-gray-300 rounded placeholder-gray-400 text-gray-800 outline-none focus:outline-none w-full cursor-pointer hover:bg-indigo-800 hover:text-gray-50"
                   type="submit"
                   value="Submit"
                 />
-                <p ref={newBookRef} className="mb-4 p-2 text-green-700"></p>
+                <p
+                  ref={newBookRef}
+                  className="mb-4 p-2 text-green-700 text-center"
+                ></p>
               </form>
             </div>
           </div>
