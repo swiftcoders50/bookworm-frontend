@@ -18,12 +18,12 @@ const OrderReview = ({ book, handlePlusMinus, deleteItem }) => {
 	};
 	return (
 		<div>
-			<div className="bg-white shadow-lg rounded-lg border p-8 mb-2">
+			<div className="bg-white shadow-lg rounded-lg border px-3 py-4 md:p-8 mb-2">
 				<div className="grid grid-cols-4">
 					<div className="grid grid-cols-2 col-span-2">
 						<img className="w-24 hidden md:block" src={book.bookImg} />
 
-						<div className="flex flex-wrap content-center">
+						<div className="col-span-2 md:col-span-1 flex flex-wrap content-center">
 							<div>
 								<h4>{book.bookName}</h4>
 								<h4>
