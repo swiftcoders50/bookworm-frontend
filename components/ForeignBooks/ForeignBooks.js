@@ -4,11 +4,9 @@ import { CartContext } from "../../pages/_app";
 import React, { useContext } from "react";
 
 const ForeignBooks = ({ books }) => {
-	// demo array of books
-
 	const [cartData, setCartData] = useContext(CartContext);
+	
 	const handleBuy = (singleBook) => {
-		console.log(singleBook);
 		let isAdded = false;
 		if (cartData.length === 0) {
 			singleBook = { ...singleBook, quantity: 1 };
