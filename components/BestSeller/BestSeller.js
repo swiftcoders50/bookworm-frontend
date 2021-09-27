@@ -46,7 +46,7 @@ const BestSeller = ({ books }) => {
 
 			{/* load more button */}
 			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
-				<Link href="/">
+				<Link href="/best-seller-books">
 					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-md font-medium">
 						More Best seller books
 					</a>

@@ -5,7 +5,7 @@ import React, { useContext } from "react";
 
 const ForeignBooks = ({ books }) => {
 	const [cartData, setCartData] = useContext(CartContext);
-	
+
 	const handleBuy = (singleBook) => {
 		let isAdded = false;
 		if (cartData.length === 0) {
@@ -30,11 +30,11 @@ const ForeignBooks = ({ books }) => {
 				<h1 className="font-oswald text-xl md:text-2xl font-medium text-indigo-900">
 					Foreigner books
 				</h1>
-				{/* <Link href="/">
-          <a className="font-oswald text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-medium">
-            View All
-          </a>
-        </Link> */}
+				<Link href="/foreign-books">
+					<a className="font-oswald text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-medium">
+						View All
+					</a>
+				</Link>
 			</div>
 
 			{/* Foreign Cart container */}
@@ -47,7 +47,7 @@ const ForeignBooks = ({ books }) => {
 
 			{/* load more button */}
 			<div className="mx-auto text-center  bg-gray-100 rounded-md w-full md:w-1/2 p-2 my-8">
-				<Link href="/">
+				<Link href="/foreign-books">
 					<a className="text-indigo-900 hover:text-indigo-500 uppercase text-md font-medium">
 						More Foreign books
 					</a>

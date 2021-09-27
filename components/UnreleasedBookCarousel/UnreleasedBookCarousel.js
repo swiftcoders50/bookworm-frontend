@@ -84,7 +84,7 @@ const UnreleasedBookCarousel = ({ unreleasedBooks }) => {
 		<div className="text-center">
 			<Slider {...settings}>
 				{unreleasedBooks.map((book) => (
-					<div className="mx-2 inline-block">
+					<div key={book._id} className="mx-2 inline-block">
 						<img
 							className="h-60 w-48 object-cover"
 							src={book.bookImg}
