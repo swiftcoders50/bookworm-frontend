@@ -4,7 +4,9 @@ import ForeignViewAll from "../../components/ForeignViewAll/ForeignViewAll";
 
 export async function getStaticProps() {
 	// fetch best seller books
-	const response = await fetch("http://localhost:5000/books/foreign-books");
+	const response = await fetch(
+		"https://bookworm-backend.vercel.app/books/foreign-books"
+	);
 	const books = await response.json();
 
 	return {

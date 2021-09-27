@@ -4,7 +4,9 @@ import BestSellerViewAll from "../../components/BestSellerViewAll/BestSellerView
 
 export async function getStaticProps() {
 	// fetch best seller books
-	const response = await fetch("http://localhost:5000/books/best-seller-books");
+	const response = await fetch(
+		"https://bookworm-backend.vercel.app/books/best-seller-books"
+	);
 	const books = await response.json();
 
 	return {
