@@ -4,6 +4,8 @@ import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 
 const BestSeller = ({ books }) => {
+	const books4 = books.slice(0, 6);
+
 	const [cartData, setCartData] = useContext(CartContext);
 	const handleBuy = (singleBook) => {
 		let isAdded = false;
@@ -39,7 +41,7 @@ const BestSeller = ({ books }) => {
 			{/* best seller Cart container */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4 ">
 				{/* cart */}
-				{books.map((book) => (
+				{books4.map((book) => (
 					<Books handleBuy={handleBuy} key={book._id} book={book} />
 				))}
 			</div>

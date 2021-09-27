@@ -4,6 +4,8 @@ import { CartContext } from "../../pages/_app";
 import React, { useContext } from "react";
 
 const ForeignBooks = ({ books }) => {
+	const books4 = books.slice(0, 6);
+
 	const [cartData, setCartData] = useContext(CartContext);
 
 	const handleBuy = (singleBook) => {
@@ -40,7 +42,7 @@ const ForeignBooks = ({ books }) => {
 			{/* Foreign Cart container */}
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 my-4">
 				{/* cart */}
-				{books.map((book) => (
+				{books4.map((book) => (
 					<Books key={book._id} book={book} handleBuy={handleBuy} />
 				))}
 			</div>
