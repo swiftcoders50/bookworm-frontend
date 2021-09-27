@@ -29,11 +29,11 @@ const BestSeller = ({ books }) => {
 				<h1 className="font-oswald text-xl md:text-2xl font-medium text-indigo-900">
 					Best Seller Books
 				</h1>
-				{/* <Link href="/">
+				<Link href="/best-seller-books">
 					<a className="font-oswald text-indigo-900 hover:text-indigo-500 text-md border border-b-0 p-2 font-medium">
 						View All
 					</a>
-				</Link> */}
+				</Link>
 			</div>
 
 			{/* best seller Cart container */}
