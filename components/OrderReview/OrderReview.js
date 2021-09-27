@@ -2,7 +2,6 @@ import React from "react";
 import { FaPlus, FaMinus, FaRegTrashAlt } from "react-icons/fa";
 import { useState } from "react";
 
-
 const OrderReview = ({ book, handlePlusMinus, deleteItem }) => {
 	const [quantity, setQuantity] = useState(book.quantity);
 	const plus = (id) => {

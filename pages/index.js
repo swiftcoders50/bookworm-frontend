@@ -8,28 +8,39 @@ import ForeignBooks from "./../components/ForeignBooks/ForeignBooks";
 import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import Footer from "../components/Footer";
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
+import MixedBooks from "../components/MixedBooks/MixedBooks";
 
 // fetch books
 export async function getStaticProps() {
-	const [bestSellerBooksRes, foreignBooksRes, unreleasedBooksRes] =
-		await Promise.all([
-			fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
-			fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
-			fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
-		]);
-
-	const [bestSellerBook, foreignBooks, unreleasedBooks] = await Promise.all([
-		bestSellerBooksRes.json(),
-		foreignBooksRes.json(),
-		unreleasedBooksRes.json(),
+	const [
+		bestSellerBooksRes,
+		foreignBooksRes,
+		unreleasedBooksRes,
+		mixedBooksRes,
+	] = await Promise.all([
+		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
+		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
+		fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
+		fetch("https://bookworm-backend.vercel.app/books"),
 	]);
-	return { props: { bestSellerBook, foreignBooks, unreleasedBooks } };
+
+	const [bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks] =
+		await Promise.all([
+			bestSellerBooksRes.json(),
+			foreignBooksRes.json(),
+			unreleasedBooksRes.json(),
+			mixedBooksRes.json(),
+		]);
+	return {
+		props: { bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks },
+	};
 }
 
 export default function Home({
 	bestSellerBook,
 	foreignBooks,
 	unreleasedBooks,
+	mixedBooks,
 }) {
 	return (
 		<div>
@@ -58,6 +69,9 @@ export default function Home({
 
 			{/* opu */}
 			<ForeignBooks books={foreignBooks} />
+
+			{/* apel*/}
+			<MixedBooks books={mixedBooks} />
 
 			{/* apel */}
 			<UnreleasedBooks books={unreleasedBooks} />
