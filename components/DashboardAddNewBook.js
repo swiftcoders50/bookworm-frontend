@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DashboardContext } from "../contexts/dashboardContext";
+import { DashboardContext } from "../contexts/DashboardContext";
 
 const DashboardAddNewBook = () => {
   const { newBookRef, newBookInfo, setNewBookInfo, newBookInfoHandler } =

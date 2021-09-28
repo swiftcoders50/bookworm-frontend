@@ -2,7 +2,7 @@ import "tailwindcss/tailwind.css";
 import Layout from "../components/Layout";
 import { createContext, useState } from "react";
 import AuthProvider from "../contexts/AuthContext";
-import { DashboardProvider } from "../contexts/dashboardContext";
+import { DashboardProvider } from "../contexts/DashboardContext";
 
 export const CartContext = createContext();
 export const BlogContext = createContext();

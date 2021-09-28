@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import { withProtected } from "../../hook/route";
-import { DashboardContext } from "../../contexts/dashboardContext";
+import { DashboardContext } from "../../contexts/DashboardContext";
 import DashboardAddNewBook from "../../components/DashboardAddNewBook";
 
 const index = () => {
@@ -61,23 +61,23 @@ const index = () => {
         <nav>
           <Link href="#addNewBook">
             <a
-              className="block my-2 py-2.5 px-4 text-xl rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
+              className="block my-2 py-2.5 px-4 text-lg rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
               onClick={() => setSection("addNewBook")}
             >
               Add New Book
             </a>
           </Link>
-          {/* <Link href="#users">
+          <Link href="#users">
             <a
-              className="block my-2 py-2.5 px-4 text-xl rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
-              onClick={() => setSection("users")}
+              className="block my-2 py-2.5 px-4 text-lg rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
+              onClick={() => setSection("inventory")}
             >
-              Users
+              Books Inventory
             </a>
-          </Link> */}
+          </Link>
           <Link href="#orders">
             <a
-              className="block my-2 py-2.5 px-4 text-xl rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
+              className="block my-2 py-2.5 px-4 text-lg rounded transition duration-200 bg-indigo-800 hover:bg-indigo-500 hover:text-white"
               onClick={() => setSection("orders")}
             >
               Orders
@@ -95,11 +95,15 @@ const index = () => {
             newBookInfoHandler={newBookInfoHandler}
             newBookRef={newBookRef}
           />
-        ) : (
+        ) : section === "inventory" ? (
+          <div>
+            <h1 className="font-bold text-center text-2xl">Inventory</h1>
+          </div>
+        ) : section === "orders" ? (
           <div>
             <h1 className="font-bold text-center text-2xl">Orders</h1>
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );
