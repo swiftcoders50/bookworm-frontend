@@ -23,8 +23,13 @@ const BestSellerViewAll = ({ books }) => {
 
 	return (
 		<div className="mx-3 sm:mx-4 md:mx-16 mb-11">
-			<div className="h-16"></div>
-
+			<div className="h-28"></div>
+			{/* best seller top banner */}
+			<img
+				className="w-full"
+				src="/assets/background/best-seller-bg.svg"
+				alt="best-seller-banner"
+			/>
 			<div className="my-8 border-b border-gray-200">
 				<h1 className="text-xl md:text-2xl font-medium text-indigo-900">
 					Best Seller Books
