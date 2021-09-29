@@ -3,6 +3,7 @@ import Link from "next/link";
 import { withProtected } from "../../hook/route";
 import { DashboardContext } from "../../contexts/DashboardContext";
 import DashboardAddNewBook from "../../components/DashboardAddNewBook";
+import DashboardHeader from "../../components/DashboardHeader";
 
 const index = () => {
   const {
@@ -17,7 +18,7 @@ const index = () => {
   } = useContext(DashboardContext);
 
   return (
-    <div className="relative min-h-screen md:flex">
+    <div className="relative h-screen md:flex">
       {/* Mobile Menu*/}
       <div className="bg-gray-200 text-gray-500 flex justify-between md:hidden">
         <a href="/" className="block p-4 text-indigo-900 font-bold">
@@ -50,7 +51,7 @@ const index = () => {
       <div
         id="dashboard-sidebar"
         ref={sidebarRef}
-        className="sidebar bg-indigo-900 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out"
+        className="sidebar bg-gradient-to-b from-indigo-800 to-black text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out shadow"
       >
         {/* logo */}
         <a href="/" className="text-white flex items-center space-x-2 px-4">
@@ -87,17 +88,26 @@ const index = () => {
       </div>
 
       {/* content */}
-      <div className="flex-1 p-10">
+      <div className="flex-1 bg-gray-50 overflow-scroll">
         {section === "addNewBook" ? (
-          <DashboardAddNewBook
-            newBookInfo={newBookInfo}
-            setNewBookInfo={setNewBookInfo}
-            newBookInfoHandler={newBookInfoHandler}
-            newBookRef={newBookRef}
-          />
+          <div className="h-screen">
+            <div className="hidden md:block sticky top-0">
+              <DashboardHeader sectionTitle={"Add New Book"} />
+            </div>
+            <DashboardAddNewBook
+              newBookInfo={newBookInfo}
+              setNewBookInfo={setNewBookInfo}
+              newBookInfoHandler={newBookInfoHandler}
+              newBookRef={newBookRef}
+            />
+          </div>
         ) : section === "inventory" ? (
           <div>
             <h1 className="font-bold text-center text-2xl">Inventory</h1>
+            <img
+              src="/assets/dashboard-images/sidebar-background-01.jpg"
+              alt="back-img"
+            />
           </div>
         ) : section === "orders" ? (
           <div>
