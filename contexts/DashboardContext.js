@@ -6,7 +6,7 @@ import usersData from "../data/usersData/usersData";
 const DashboardContext = createContext();
 
 const DashboardProvider = ({ children }) => {
-  const [section, setSection] = useState("addNewBook");
+  const [section, setSection] = useState("dashboard");
   const sidebarRef = useRef(null);
   const newBookRef = useRef(null);
   const [newBookInfo, setNewBookInfo] = useState({
