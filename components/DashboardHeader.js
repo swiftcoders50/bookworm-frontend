@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
-import { FiLogOut } from "react-icons/fi";
+// import { FiLogOut } from "react-icons/fi";
 
 const DashboardHeader = ({ sectionTitle }) => {
   const { currentUser, logout } = useAuth();
@@ -20,7 +20,7 @@ const DashboardHeader = ({ sectionTitle }) => {
           <p className="mx-2 text-lg cursor-pointer " onClick={logout}>
             Logout
           </p>
-          <FiLogOut />
+          {/* <FiLogOut /> */}
         </div>
       </div>
     </div>

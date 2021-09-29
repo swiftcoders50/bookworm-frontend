@@ -5,8 +5,8 @@ import { DashboardContext } from "../../contexts/DashboardContext";
 import DashboardAddNewBook from "../../components/DashboardAddNewBook";
 import DashboardHeader from "../../components/DashboardHeader";
 import { FaBookOpen, FaBook, FaShoppingBasket, FaUsers } from "react-icons/fa";
-import { ImBooks } from "react-icons/im";
-import { MdDashboard } from "react-icons/Md";
+// import { ImBooks } from "react-icons/im";
+// import { MdDashboard } from "react-icons/Md";
 
 const index = () => {
   const {
@@ -71,7 +71,7 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center space-x-2"
               onClick={() => setSection("dashboard")}
             >
-              <MdDashboard />
+              {/* <MdDashboard /> */}
               <span className="ml-4">Dashboard</span>
             </a>
           </Link>
@@ -98,7 +98,7 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
               onClick={() => setSection("inventory")}
             >
-              <ImBooks />
+              {/* <ImBooks /> */}
               <span className="ml-4">Inventory</span>
             </a>
           </Link>
