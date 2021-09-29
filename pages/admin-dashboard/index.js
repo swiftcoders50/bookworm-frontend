@@ -4,10 +4,16 @@ import { withProtected } from "../../hook/route";
 import { DashboardContext } from "../../contexts/DashboardContext";
 import DashboardAddNewBook from "../../components/DashboardAddNewBook";
 import DashboardHeader from "../../components/DashboardHeader";
-import { FaBookOpen, FaBook, FaShoppingBasket, FaUsers } from "react-icons/fa";
-// import { ImBooks } from "react-icons/im";
-// import { MdDashboard } from "react-icons/Md";
-
+import {
+  faBookOpen,
+  faColumns,
+  faUsers,
+  faShoppingBasket,
+  faSwatchbook,
+  faBook,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const index = () => {
   const {
     section,
@@ -59,7 +65,9 @@ const index = () => {
         {/* logo */}
         <Link href="/">
           <a className="mb-16 text-center text-white flex items-center space-x-2 px-4 ">
-            <FaBookOpen className="text-2xl " />
+            <div className="w-6">
+              <FontAwesomeIcon icon={faBookOpen} size="lg" />
+            </div>
             <span className="text-2xl text-center font-bold">Bookworm</span>
           </a>
         </Link>
@@ -68,10 +76,12 @@ const index = () => {
         <nav>
           <Link href="#dashboard">
             <a
-              className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center space-x-2"
+              className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2 "
               onClick={() => setSection("dashboard")}
             >
-              {/* <MdDashboard /> */}
+              <div className="w-6">
+                <FontAwesomeIcon icon={faColumns} />
+              </div>
               <span className="ml-4">Dashboard</span>
             </a>
           </Link>
@@ -80,7 +90,9 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2 "
               onClick={() => setSection("users")}
             >
-              <FaUsers />
+              <div className="w-6">
+                <FontAwesomeIcon icon={faUsers} />
+              </div>
               <span className="ml-4">Users</span>
             </a>
           </Link>
@@ -89,7 +101,10 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
               onClick={() => setSection("orders")}
             >
-              <FaShoppingBasket />
+              <div className="w-6">
+                <FontAwesomeIcon icon={faShoppingBasket} />
+              </div>
+
               <span className="ml-4">Orders</span>
             </a>
           </Link>
@@ -98,7 +113,10 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
               onClick={() => setSection("inventory")}
             >
-              {/* <ImBooks /> */}
+              <div className="w-6">
+                <FontAwesomeIcon icon={faSwatchbook} />
+              </div>
+
               <span className="ml-4">Inventory</span>
             </a>
           </Link>
@@ -107,7 +125,10 @@ const index = () => {
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
               onClick={() => setSection("addNewBook")}
             >
-              <FaBook />
+              <div className="w-6">
+                <FontAwesomeIcon icon={faBook} />
+              </div>
+
               <span className="ml-4">New Book</span>
             </a>
           </Link>

@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { useAuth } from "../contexts/AuthContext";
-// import { FiLogOut } from "react-icons/fi";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DashboardHeader = ({ sectionTitle }) => {
   const { currentUser, logout } = useAuth();
@@ -16,11 +17,12 @@ const DashboardHeader = ({ sectionTitle }) => {
             {currentUser.displayName}
           </a>
         </Link>
-        <div className="text-red-600 flex justify-center items-center">
-          <p className="mx-2 text-lg cursor-pointer " onClick={logout}>
-            Logout
-          </p>
-          {/* <FiLogOut /> */}
+        <div
+          className="text-red-600 flex justify-center items-center cursor-pointer"
+          onClick={logout}
+        >
+          <p className="mx-2 text-lg">Logout</p>
+          <FontAwesomeIcon icon={faSignOutAlt} />
         </div>
       </div>
     </div>
