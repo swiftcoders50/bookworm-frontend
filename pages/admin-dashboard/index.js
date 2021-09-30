@@ -15,6 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DashboardInventory from "../../components/DashboardInventory";
 import DashboardOrders from "../../components/DashboardOrders";
+import DashboardHome from "../../components/DashboardHome";
 
 export const getStaticProps = async () => {
   const bookRes = await fetch("https://bookworm-backend.vercel.app/books");
@@ -155,7 +156,7 @@ const index = ({ books, orders }) => {
             <div className="hidden md:block sticky top-0">
               <DashboardHeader sectionTitle={"Dashboard"} />
             </div>
-            <h1 className="font-bold text-center text-2xl">Dashboard</h1>
+            <DashboardHome books={books} orders={orders} />
           </div>
         ) : // section === "users" ? (
         //   <div className="h-screen">
