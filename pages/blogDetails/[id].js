@@ -26,7 +26,7 @@ const blogDetails = () => {
 
         {/* this is picture */}
         <img
-          className="h-96 md:w-9/12 lg:w-screen w-full rounded"
+          className="h-96 md:w-9/12 lg:w-screen w-full rounded object-cover"
           src={newBlogData?.img}
           alt=""
         />

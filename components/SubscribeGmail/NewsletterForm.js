@@ -46,7 +46,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
     <>
       <div className="flex justify-center items-center w-screen mb-20">
         <section className="w-full bg-indigo-900">
-          <div className="container px-4 mx-auto">
+          <div className="container lg:pr-10 mx-auto">
             <div className="grid grid-cols-1 my-4 lg:grid-cols-3">
               <div className="flex flex-row text-center justify-center text-white my-auto ">
                 <svg
