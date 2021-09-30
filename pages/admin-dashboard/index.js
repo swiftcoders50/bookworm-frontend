@@ -11,10 +11,19 @@ import {
   faShoppingBasket,
   faSwatchbook,
   faBook,
-  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const index = () => {
+import DashboardInventory from "../../components/DashboardInventory";
+
+export const getStaticProps = async () => {
+  const res = await fetch("https://bookworm-backend.vercel.app/books");
+  const books = await res.json();
+  return {
+    props: { books },
+  };
+};
+
+const index = ({ books }) => {
   const {
     section,
     setSection,
@@ -25,6 +34,7 @@ const index = () => {
     showSidebar,
     newBookInfoHandler,
   } = useContext(DashboardContext);
+  console.log(books);
 
   return (
     <div className="relative h-screen md:flex">
@@ -76,13 +86,13 @@ const index = () => {
         <nav>
           <Link href="#dashboard">
             <a
-              className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2 "
+              className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
               onClick={() => setSection("dashboard")}
             >
               <div className="w-6">
                 <FontAwesomeIcon icon={faColumns} />
               </div>
-              <span className="ml-4">Dashboard</span>
+              <span className="ml-4 hover:text-gray-400 ">Dashboard</span>
             </a>
           </Link>
           <Link href="#users">
@@ -93,7 +103,7 @@ const index = () => {
               <div className="w-6">
                 <FontAwesomeIcon icon={faUsers} />
               </div>
-              <span className="ml-4">Users</span>
+              <span className="ml-4 hover:text-gray-400 ">Users</span>
             </a>
           </Link>
           <Link href="#orders">
@@ -105,7 +115,7 @@ const index = () => {
                 <FontAwesomeIcon icon={faShoppingBasket} />
               </div>
 
-              <span className="ml-4">Orders</span>
+              <span className="ml-4 hover:text-gray-400 ">Orders</span>
             </a>
           </Link>
           <Link href="#inventory">
@@ -117,7 +127,7 @@ const index = () => {
                 <FontAwesomeIcon icon={faSwatchbook} />
               </div>
 
-              <span className="ml-4">Inventory</span>
+              <span className="ml-4 hover:text-gray-400 ">Inventory</span>
             </a>
           </Link>
           <Link href="#addNewBook">
@@ -129,7 +139,7 @@ const index = () => {
                 <FontAwesomeIcon icon={faBook} />
               </div>
 
-              <span className="ml-4">New Book</span>
+              <span className="ml-4 hover:text-gray-400 ">New Book</span>
             </a>
           </Link>
         </nav>
@@ -138,24 +148,32 @@ const index = () => {
       {/* content */}
       <div className="flex-1 bg-gray-50 overflow-scroll">
         {section === "dashboard" ? (
-          <div>
-            <DashboardHeader sectionTitle={"Dashboard"} />
+          <div className="h-screen">
+            <div className="hidden md:block sticky top-0">
+              <DashboardHeader sectionTitle={"Dashboard"} />
+            </div>
             <h1 className="font-bold text-center text-2xl">Dashboard</h1>
           </div>
         ) : section === "users" ? (
-          <div>
-            <DashboardHeader sectionTitle={"Users"} />
+          <div className="h-screen">
+            <div className="hidden md:block sticky top-0">
+              <DashboardHeader sectionTitle={"Users"} />
+            </div>
             <h1 className="font-bold text-center text-2xl">Users</h1>
           </div>
         ) : section === "orders" ? (
-          <div>
-            <DashboardHeader sectionTitle={"Orders"} />
+          <div className="h-screen">
+            <div className="hidden md:block sticky top-0">
+              <DashboardHeader sectionTitle={"Orders"} />
+            </div>
             <h1 className="font-bold text-center text-2xl">Orders</h1>
           </div>
         ) : section === "inventory" ? (
-          <div>
-            <DashboardHeader sectionTitle={"Inventory"} />
-            <h1 className="font-bold text-center text-2xl">Inventory</h1>
+          <div className="h-screen">
+            <div className="hidden md:block sticky top-0">
+              <DashboardHeader sectionTitle={"Inventory"} />
+            </div>
+            <DashboardInventory books={books} />
           </div>
         ) : section === "addNewBook" ? (
           <div className="h-screen">
