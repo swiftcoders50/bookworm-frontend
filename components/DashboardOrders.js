@@ -26,10 +26,6 @@ const DashboardOrders = ({ orders }) => {
               <p className="w-10 sm:w-16 md:w-28 overflow-hidden">
                 {order.shippingData.phone}
               </p>
-              {/* Books Name */}
-              {/* <p className="w-10 sm:w-16 md:w-28 overflow-hidden">
-                {order.orde.phone}
-              </p> */}
               <ol className="w-10 sm:w-16 md:w-28 overflow-hidden" type="1">
                 {order.orderData.map((book, index) => (
                   <li key={book._id}>

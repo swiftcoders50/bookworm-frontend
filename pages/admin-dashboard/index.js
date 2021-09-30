@@ -38,7 +38,6 @@ const index = ({ books, orders }) => {
     showSidebar,
     newBookInfoHandler,
   } = useContext(DashboardContext);
-  console.log(orders);
 
   return (
     <div className="relative h-screen md:flex">
