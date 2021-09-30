@@ -13,18 +13,20 @@ const blogDetails = () => {
   return (
     <div className="pt-24 px-10 md:px-52">
       <div>
-        <span className="text-4xl text-black font-bold">
+        <span className="text-3xl text-indigo-900 font-semibold">
           {newBlogData?.title}
         </span>
 
         <div className="flex items-center pb-5 pt-3">
-          <FaCalendar className="text-black" />
-          <span className="text-lg text-black pl-2">{newBlogData?.date}</span>
+          <FaCalendar className="text-gray-600" size="1.2rem" />
+          <span className="text-lg text-gray-600 pl-2">
+            {newBlogData?.date}
+          </span>
         </div>
 
         {/* this is picture */}
         <img
-          className="h-96 md:w-9/12 w-full rounded"
+          className="h-96 md:w-9/12 lg:w-screen w-full rounded"
           src={newBlogData?.img}
           alt=""
         />
@@ -32,18 +34,16 @@ const blogDetails = () => {
         {/* description */}
         <div className="mt-8 text-justify">
           <div className="flex items-center">
-            <FaEdit className="text-black" />
-            <span className="text-lg pl-2 text-black font-bold">
+            <FaEdit className="text-gray-600" size="1.2rem" />
+            <span className="text-lg pl-2 text-gray-700 font-bold">
               {newBlogData?.name}
             </span>
           </div>
           <div>
-            <span className="text-lg text-gray-500 font-bold">
-              {newBlogData?.text}
-            </span>
+            <span className="text-lg text-gray-700">{newBlogData?.text}</span>
           </div>
 
-          <div className="text-lg text-gray-500 font-bold mb-8 mt-10">
+          <div className="text-lg text-gray-700  mb-8 mt-10">
             A professor at the University of Minnesota, blogger John Pistelli
             holds a PhD in English literature; he has published several works of
             fiction and poetry, including a novel (Portraits and Ashes). The
@@ -55,7 +55,14 @@ const blogDetails = () => {
             approximately one new review per week.
           </div>
 
-          <div className="text-lg text-gray-500 font-bold mb-8">
+          <div className="flex items-center">
+            <FaEdit className="text-gray-600" size="1.2rem" />
+            <span className="text-lg pl-2 text-gray-700 font-bold">
+              Books changed my ideology
+            </span>
+          </div>
+
+          <div className="text-lg text-gray-700  mb-8">
             Blogger Susan Osborne has done it all—she has worked in book sales,
             as a writer, and as a magazine editor. As she puts it, her aims are
             to "select snippets of book news that interest [her], talk about
@@ -66,7 +73,22 @@ const blogDetails = () => {
             happily mired in the world of literature.
           </div>
 
-          <div className="text-lg text-gray-500 font-bold mb-8">
+          <div className="flex justify-around">
+            <img
+              className="h-54 w-94"
+              src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RvcnklMjBib29rfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt=""
+            />
+          </div>
+
+          <div className="flex items-center mt-5">
+            <FaEdit className="text-gray-600" size="1.2rem" />
+            <span className="text-lg pl-2 text-gray-700 font-bold">
+              Our favourite books of 2021
+            </span>
+          </div>
+
+          <div className="text-lg text-gray-700  mb-8">
             This blog features "curated collections of the best stories this
             planet has to offer." You will get lost scrolling through the
             available posts promising content such as "50 Subgenres and Their

@@ -64,7 +64,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
                   />
                 </svg>
                 <h1 className="font-bold text-2xl md:text-3xl my-3 lg:my-0">
-                  Subscribe for Join Us!
+                  Subscribe to Join Us!
                 </h1>
               </div>
               <div className="text-center text-white my-auto">
