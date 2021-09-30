@@ -31,7 +31,7 @@ const Books = ({ book, handleBuy }) => {
 							Add to cart
 						</button>
 
-						{/* icon */}
+						{/* icon
 						{book.favorite && (
 							<BsHeartFill
 								className="cursor-pointer"
@@ -41,7 +41,7 @@ const Books = ({ book, handleBuy }) => {
 						)}
 						{!book.favorite && (
 							<BsHeart className="cursor-pointer" size="1.2rem" color="gray" />
-						)}
+						)} */}
 					</div>
 				</div>
 			</div>

@@ -144,10 +144,11 @@ const HeaderCarousel = ({ isVisible }) => {
 								<p className="my-5 hidden sm:block text-gray-900 text-md">
 									{info.details1} <br /> {info.details2}
 								</p>
-								<button className="font-oswald bg-indigo-900 hover:bg-indigo-800 text-white text-md uppercase font-medium tracking-wider p-2 rounded-lg">
+								{/* offer button */}
+								{/* <button className="font-oswald bg-indigo-900 hover:bg-indigo-800 text-white text-md uppercase font-medium tracking-wider p-2 rounded-lg">
 									Buy now for <span>$</span>
 									{info.price}
-								</button>
+								</button> */}
 							</div>
 							<div className="mt-8">
 								<CarouselRotateImage image={info.img} />
