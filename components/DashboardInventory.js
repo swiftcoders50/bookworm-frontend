@@ -1,7 +1,6 @@
 import React from "react";
 
 const DashboardInventory = ({ books }) => {
-  console.log({ books });
   return (
     <div className="h-full">
       <h1 className="p-8 text-xl text-gray-500 text-center">
@@ -34,7 +33,6 @@ const DashboardInventory = ({ books }) => {
               <p className="w-10 sm:w-16 md:w-28 overflow-hidden">
                 $ {book.bookPrice}
               </p>
-              {/* <p>{book.bookPrice.slice(0, 15)}</p> */}
             </div>
           ))}
         </div>

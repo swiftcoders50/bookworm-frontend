@@ -14,16 +14,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DashboardInventory from "../../components/DashboardInventory";
+import DashboardOrders from "../../components/DashboardOrders";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://bookworm-backend.vercel.app/books");
-  const books = await res.json();
+  const bookRes = await fetch("https://bookworm-backend.vercel.app/books");
+  const books = await bookRes.json();
+
+  const ordersRes = await fetch("https://bookworm-backend.vercel.app/orders");
+  const orders = await ordersRes.json();
   return {
-    props: { books },
+    props: { books, orders },
   };
 };
 
-const index = ({ books }) => {
+const index = ({ books, orders }) => {
   const {
     section,
     setSection,
@@ -34,7 +38,7 @@ const index = ({ books }) => {
     showSidebar,
     newBookInfoHandler,
   } = useContext(DashboardContext);
-  console.log(books);
+  console.log(orders);
 
   return (
     <div className="relative h-screen md:flex">
@@ -95,7 +99,7 @@ const index = ({ books }) => {
               <span className="ml-4 hover:text-gray-400 ">Dashboard</span>
             </a>
           </Link>
-          <Link href="#users">
+          {/* <Link href="#users">
             <a
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2 "
               onClick={() => setSection("users")}
@@ -105,7 +109,7 @@ const index = ({ books }) => {
               </div>
               <span className="ml-4 hover:text-gray-400 ">Users</span>
             </a>
-          </Link>
+          </Link> */}
           <Link href="#orders">
             <a
               className="my-4 py-2 px-4 text-lg rounded transition duration-200 flex items-center  space-x-2"
@@ -154,19 +158,20 @@ const index = ({ books }) => {
             </div>
             <h1 className="font-bold text-center text-2xl">Dashboard</h1>
           </div>
-        ) : section === "users" ? (
-          <div className="h-screen">
-            <div className="hidden md:block sticky top-0">
-              <DashboardHeader sectionTitle={"Users"} />
-            </div>
-            <h1 className="font-bold text-center text-2xl">Users</h1>
-          </div>
-        ) : section === "orders" ? (
+        ) : // section === "users" ? (
+        //   <div className="h-screen">
+        //     <div className="hidden md:block sticky top-0">
+        //       <DashboardHeader sectionTitle={"Users"} />
+        //     </div>
+        //     <h1 className="font-bold text-center text-2xl">Users</h1>
+        //   </div>
+        // ) :
+        section === "orders" ? (
           <div className="h-screen">
             <div className="hidden md:block sticky top-0">
               <DashboardHeader sectionTitle={"Orders"} />
             </div>
-            <h1 className="font-bold text-center text-2xl">Orders</h1>
+            <DashboardOrders orders={orders} />
           </div>
         ) : section === "inventory" ? (
           <div className="h-screen">
