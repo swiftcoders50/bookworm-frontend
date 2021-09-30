@@ -39,7 +39,7 @@ const DashboardOrders = ({ orders }) => {
                 ))}
               </ol>
               <p className="w-10 sm:w-16 md:w-28 overflow-hidden">
-                {order.paymentData.totalPrice}
+                $ {order.paymentData.totalPrice}
               </p>
               <p className="w-10 sm:w-16 md:w-28 overflow-hidden">
                 {order.status}
