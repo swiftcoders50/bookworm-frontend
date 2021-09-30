@@ -5,7 +5,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
   const [email, setEmail] = useState(null);
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (e) => {
     setError(null);
 
     if (!email) {
