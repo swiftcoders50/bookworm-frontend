@@ -21,7 +21,7 @@ const NewsletterForm = ({ status, message, onValidated }) => {
 
   const handleInputKeyEvent = (event) => {
     setError(null);
-    // Number 13 is the "Enter" key on the keyboard
+    // Number 13 is the "Enter" key on the keyboard //
     if (event.keyCode === 13) {
       // Cancel the default action, if needed
       event.preventDefault();
