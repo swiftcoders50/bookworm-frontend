@@ -13,7 +13,7 @@ const DashboardHeader = ({ sectionTitle }) => {
       </div>
       <div className="flex justify-end items-center ">
         <Link href="/my-profile">
-          <a className="mx-2 text-indigo-800 text-lg font-semibold cursor-pointer">
+          <a className="mx-2 text-gray-800 text-lg font-semibold cursor-pointer">
             {currentUser.displayName}
           </a>
         </Link>
