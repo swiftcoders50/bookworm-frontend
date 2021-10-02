@@ -24,14 +24,13 @@ const DashboardProvider = ({ children }) => {
   const newBookInfoHandler = (e) => {
     e.preventDefault();
 
-    fetch("https://bookworm-backend.vercel.app/books/addNewBook", {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/books/addNewBook`, {
       method: "POST",
       body: JSON.stringify({ ...newBookInfo }),
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         newBookRef.current.innerText = data.message;
         setTimeout(() => {
           newBookRef.current.innerText = "";
