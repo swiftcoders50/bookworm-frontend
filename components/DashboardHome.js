@@ -14,7 +14,7 @@ const DashboardHome = ({ books, orders }) => {
   return (
     <div className="h-full">
       <h1 className="p-8 text-2xl md:text-3xl text-indigo-800">
-        Welcome, {currentUser.displayName}
+        Hello, {currentUser.displayName}
       </h1>
       <div className="mx-4 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="p-4 m-2 text-2xl text-indigo-800 bg-white border border-gray-200 shadow-lg rounded flex justify-center items-center">
