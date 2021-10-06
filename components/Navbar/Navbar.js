@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CartContext } from "../../pages/_app";
 import { useAuth } from "../../contexts/AuthContext";
 import { BiUser, BiArrowToBottom } from "react-icons/bi";
+import Categories from "./../Categories";
 
 const Header = () => {
   const { currentUser, logout } = useAuth();
@@ -64,6 +65,7 @@ const Header = () => {
               </a>
             </Link>
 
+            {/* this is categories dropdown */}
             {/* <Link href="/categories">
               <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-semibold items-center justify-center hover:hover:bg-indigo-900 hover:text-white">
                 <div className="flex">
@@ -85,37 +87,44 @@ const Header = () => {
                 </div>
               </a>
             </Link> */}
-            {/* this is dropdown */}
-            {/* <div class="group inline-block relative">
-              <div class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-medium items-center justify-center hover:hover:bg-indigo-900 hover:text-white flex">
-                <span class="mr-1">Categories</span>
+
+            {/* this is dropdown for cetegories on hover*/}
+            <div className="group inline-block relative">
+              <div className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-indigo-900 font-medium tracking-widest items-center justify-center hover:bg-indigo-900 hover:text-white flex cursor-pointer">
+                <span className="mr-1">Categories</span>
                 <svg
-                  class="fill-current h-4 w-4"
+                  className="fill-current h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                 >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                 </svg>
               </div>
-              <ul class="absolute hidden group-hover:block text-gray-700 lg:pt-5">
-                <li class="">
-                  <a
-                    class="rounded-t bg-white text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap border-b-2 border-gray-200"
-                    href="#"
-                  >
-                    Profile
-                  </a>
+              <ul className="absolute hidden group-hover:block text-gray-700 lg:pt-5">
+                <li className="">
+                  <Link href="/best-seller-books">
+                    <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400 w-48 text-center">
+                      Best Seller
+                    </a>
+                  </Link>
                 </li>
-                <li class="">
-                  <a
-                    class="rounded-t bg-white text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2 rounded  block whitespace-no-wrap"
-                    href="#"
-                  >
-                    Logout
-                  </a>
+                <li className="">
+                  <Link href="/mixed-books">
+                    <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400 w-48 text-center">
+                      Mixed Books
+                    </a>
+                  </Link>
+                </li>
+
+                <li className="">
+                  <Link href="/foreign-books">
+                    <a className="rounded-t bg-gray-200 text-indigo-900 font-medium hover:hover:bg-indigo-900 hover:text-white px-10 p-2   block whitespace-no-wrap border-b border-gray-400 w-48 text-center">
+                      Foreign Books
+                    </a>
+                  </Link>
                 </li>
               </ul>
-            </div> */}
+            </div>
             {/* end of dropdown */}
 
             <Link href="/contact">

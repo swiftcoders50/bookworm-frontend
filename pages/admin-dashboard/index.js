@@ -17,13 +17,11 @@ import DashboardInventory from "../../components/DashboardInventory";
 import DashboardOrders from "../../components/DashboardOrders";
 import DashboardHome from "../../components/DashboardHome";
 
-export const getServerSideProps = async () => {
-  const bookRes = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/books`);
+export const getStaticProps = async () => {
+  const bookRes = await fetch("https://bookworm-backend.vercel.app/books");
   const books = await bookRes.json();
 
-  const ordersRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_API}/orders`
-  );
+  const ordersRes = await fetch("https://bookworm-backend.vercel.app/orders");
   const orders = await ordersRes.json();
   return {
     props: { books, orders },
