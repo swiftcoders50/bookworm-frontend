@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import ScrolledTop from "../components/ScrolledTop/ScrolledTop";
 import LiveChat from "./LiveChat/LiveChat";
-import PayWith from "./Paywith/Paywith";
+
 const Footer = () => {
 	return (
 		<footer>
@@ -40,7 +40,11 @@ const Footer = () => {
 						<div className="lg:mt-7">
 							<h4 className="text-xl font-semibold text-gray-800">Pay with</h4>
 							<div className="mt-3">
-								<PayWith />
+								<img
+									className="rounded-md shadow"
+									src="./assets/paywith.svg"
+									alt="paywith"
+								/>
 							</div>
 						</div>
 					</div>
