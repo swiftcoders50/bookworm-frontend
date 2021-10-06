@@ -37,7 +37,7 @@ const Footer = () => {
 						</div>
 
 						{/* Pay with option */}
-						<div className="lg:mt-6">
+						<div className="lg:mt-7">
 							<h4 className="text-xl font-semibold text-gray-800">Pay with</h4>
 							<div className="mt-3">
 								<img
