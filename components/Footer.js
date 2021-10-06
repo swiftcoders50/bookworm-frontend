@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ScrolledTop from "../components/ScrolledTop/ScrolledTop";
 import LiveChat from "./LiveChat/LiveChat";
+import PayWith from "./Paywith/Paywith";
 // import LiveChat from "../components/LiveChat/LiveChat";
 // import ReactDOM from "react-dom";
 // import MessengerCustomerChat from "react-messenger-customer-chat";
@@ -8,7 +9,7 @@ import LiveChat from "./LiveChat/LiveChat";
 const Footer = () => {
 	return (
 		<footer>
-			<div className="px-10 pt-10 pb-4 bg-gray-50 text-gray-700 shadow border border-gray-300">
+			<div className="px-3 sm:px-4 md:px-16 pt-10 pb-4 bg-gray-50 text-gray-700 shadow border border-gray-300">
 				<div className="mx-w-7xl mx-auto relative">
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
 						<div className="mb-2">
@@ -23,7 +24,7 @@ const Footer = () => {
 							</p>
 							<br />
 						</div>
-						<div className="mb-2"></div>
+
 						<div className="mb-2">
 							<h4 className="text-xl mb-2">
 								<strong>Contact Info:</strong>
@@ -31,6 +32,9 @@ const Footer = () => {
 							<p>Dhaka, Bangladesh.</p>
 							<p>Email: swiftcoders50@gmail.com</p>
 							{/* <ScrolledTop /> */}
+						</div>
+						<div className="mb-2">
+							<PayWith />
 						</div>
 						{/* <div className="mb-4">
               <h4 className="text-xl">
