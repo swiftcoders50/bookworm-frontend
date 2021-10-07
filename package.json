@@ -13,6 +13,7 @@
 		"@kommunicate/kommunicate-chatbot-plugin": "^0.0.5",
 		"@stripe/react-stripe-js": "^1.4.1",
 		"@stripe/stripe-js": "^1.17.1",
+		"aos": "^2.3.4",
 		"axios": "^0.21.4",
 		"emailjs": "^3.6.0",
 		"emailjs-com": "^3.2.0",

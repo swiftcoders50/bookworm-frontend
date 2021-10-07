@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { decode } from "html-entities";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const NewsletterForm = ({ status, message, onValidated }) => {
   const [error, setError] = useState(null);
@@ -42,9 +44,15 @@ const NewsletterForm = ({ status, message, onValidated }) => {
     return formattedMessage ? decode(formattedMessage) : null;
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <>
-      <div className="flex justify-center items-center w-screen mb-20">
+      <div
+        className="flex justify-center items-center w-screen mb-20"
+        data-aos="fade-up"
+      >
         <section className="w-full bg-indigo-900">
           <div className="container lg:pr-10 mx-auto">
             <div className="grid grid-cols-1 my-4 lg:grid-cols-3">
