@@ -13,81 +13,81 @@ import Subscribe from "./../components/SubscribeGmail/Subscribe";
 
 // fetch books
 export async function getStaticProps() {
-  const [
-    bestSellerBooksRes,
-    foreignBooksRes,
-    unreleasedBooksRes,
-    mixedBooksRes,
-  ] = await Promise.all([
-    fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
-    fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
-    fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
-    fetch("https://bookworm-backend.vercel.app/books"),
-  ]);
+	const [
+		bestSellerBooksRes,
+		foreignBooksRes,
+		unreleasedBooksRes,
+		mixedBooksRes,
+	] = await Promise.all([
+		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
+		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
+		fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
+		fetch("https://bookworm-backend.vercel.app/books"),
+	]);
 
-  const [bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks] =
-    await Promise.all([
-      bestSellerBooksRes.json(),
-      foreignBooksRes.json(),
-      unreleasedBooksRes.json(),
-      mixedBooksRes.json(),
-    ]);
-  return {
-    props: { bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks },
-  };
+	const [bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks] =
+		await Promise.all([
+			bestSellerBooksRes.json(),
+			foreignBooksRes.json(),
+			unreleasedBooksRes.json(),
+			mixedBooksRes.json(),
+		]);
+	return {
+		props: { bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks },
+	};
 }
 
 export default function Home({
-  bestSellerBook,
-  foreignBooks,
-  unreleasedBooks,
-  mixedBooks,
+	bestSellerBook,
+	foreignBooks,
+	unreleasedBooks,
+	mixedBooks,
 }) {
-  return (
-    <div>
-      <Head>
-        <title>Bookworm</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="bookworm"
-          content="Bookworm is book library for book lovers"
-        />
-      </Head>
-      {/* Google font */}
-      <style jsx global>{`
-        html,
-        body {
-          font-family: "Roboto", sans-serif;
-        }
-      `}</style>
-      {/* Google font */}
+	return (
+		<div>
+			<Head>
+				<title>Bookworm</title>
+				<link rel="icon" href="/favicon.ico" />
+				<meta
+					name="bookworm"
+					content="Bookworm is book library for book lovers"
+				/>
+			</Head>
+			{/* Google font */}
+			<style jsx global>{`
+				html,
+				body {
+					font-family: "Roboto", sans-serif;
+				}
+			`}</style>
+			{/* Google font */}
 
-      {/* apel */}
-      <HeaderCarousel />
+			{/* apel */}
+			<HeaderCarousel />
 
-      {/* apel */}
-      <BestSeller books={bestSellerBook} />
+			{/* apel */}
+			<BestSeller books={bestSellerBook} />
 
-      {/* opu */}
-      <ForeignBooks books={foreignBooks} />
+			{/* opu */}
+			<ForeignBooks books={foreignBooks} />
 
-      {/* apel*/}
-      <MixedBooks books={mixedBooks} />
+			{/* apel*/}
+			<MixedBooks books={mixedBooks} />
 
-      {/* apel */}
-      <UnreleasedBooks books={unreleasedBooks} />
+			{/* apel */}
+			<UnreleasedBooks books={unreleasedBooks} />
 
-      {/* samiha */}
-      <Categories />
+			{/* samiha */}
+			<Categories />
 
-      {/* opu */}
-      <Blogs />
+			{/* opu */}
+			<Blogs />
 
-      {/* apel */}
-      <Authors />
+			{/* apel */}
+			<Authors />
 
-      {/* jahid */}
-      <Subscribe />
-    </div>
-  );
+			{/* jahid */}
+			<Subscribe />
+		</div>
+	);
 }
