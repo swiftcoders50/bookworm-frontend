@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { createContext, useEffect, useState } from "react";
 import AuthProvider from "../contexts/AuthContext";
 import { DashboardProvider } from "../contexts/DashboardContext";
+import AdminProvider from "../contexts/AdminContext";
 
 export const CartContext = createContext();
 export const BlogContext = createContext();
@@ -32,24 +33,26 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<AuthProvider>
-			<DashboardProvider>
-				<BlogContext.Provider value={[blogData, setBlogData]}>
-					<CartContext.Provider
-						value={[
-							cartData,
-							setCartData,
-							cartTotal,
-							setCartTotal,
-							orderData,
-							setOrderData,
-						]}
-					>
-						<Layout>
-							<Component {...pageProps} />
-						</Layout>
-					</CartContext.Provider>
-				</BlogContext.Provider>
-			</DashboardProvider>
+			<AdminProvider>
+				<DashboardProvider>
+					<BlogContext.Provider value={[blogData, setBlogData]}>
+						<CartContext.Provider
+							value={[
+								cartData,
+								setCartData,
+								cartTotal,
+								setCartTotal,
+								orderData,
+								setOrderData,
+							]}
+						>
+							<Layout>
+								<Component {...pageProps} />
+							</Layout>
+						</CartContext.Provider>
+					</BlogContext.Provider>
+				</DashboardProvider>
+			</AdminProvider>
 		</AuthProvider>
 	);
 }
