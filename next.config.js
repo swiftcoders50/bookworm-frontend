@@ -1,3 +1,3 @@
 module.exports = {
-	optimizeFonts: false,
+  optimizeFonts: false,
 };
