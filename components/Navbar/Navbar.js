@@ -23,8 +23,6 @@ const Header = () => {
 		window.addEventListener("scroll", changeBackground);
 	}, []);
 
-	console.log("admin", admin);
-
 	return (
 		<>
 			<nav

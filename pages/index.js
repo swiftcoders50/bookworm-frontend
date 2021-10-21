@@ -8,30 +8,48 @@ import UnreleasedBooks from "./../components/UnreleasedBooks/UnreleasedBooks";
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 import MixedBooks from "../components/MixedBooks/MixedBooks";
 import Subscribe from "./../components/SubscribeGmail/Subscribe";
+import { useAdmin } from "../contexts/AdminContext";
+import { useEffect } from "react";
+import { useAuth } from "../contexts/AuthContext";
 
 // fetch books
+let currentUserEmail = "apelmahmud@gmail.com";
 export async function getStaticProps() {
 	const [
 		bestSellerBooksRes,
 		foreignBooksRes,
 		unreleasedBooksRes,
 		mixedBooksRes,
+		checkedAdminRes,
 	] = await Promise.all([
 		fetch("https://bookworm-backend.vercel.app/books/best-seller-books"),
 		fetch("https://bookworm-backend.vercel.app/books/foreign-books"),
 		fetch("https://bookworm-backend.vercel.app/books/unreleased-books"),
 		fetch("https://bookworm-backend.vercel.app/books"),
+		fetch("http://localhost:5000/admin"),
 	]);
 
-	const [bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks] =
-		await Promise.all([
-			bestSellerBooksRes.json(),
-			foreignBooksRes.json(),
-			unreleasedBooksRes.json(),
-			mixedBooksRes.json(),
-		]);
+	const [
+		bestSellerBook,
+		foreignBooks,
+		unreleasedBooks,
+		mixedBooks,
+		checkedAdmin,
+	] = await Promise.all([
+		bestSellerBooksRes.json(),
+		foreignBooksRes.json(),
+		unreleasedBooksRes.json(),
+		mixedBooksRes.json(),
+		checkedAdminRes.json(),
+	]);
 	return {
-		props: { bestSellerBook, foreignBooks, unreleasedBooks, mixedBooks },
+		props: {
+			bestSellerBook,
+			foreignBooks,
+			unreleasedBooks,
+			mixedBooks,
+			checkedAdmin,
+		},
 	};
 }
 
@@ -40,7 +58,26 @@ export default function Home({
 	foreignBooks,
 	unreleasedBooks,
 	mixedBooks,
+	checkedAdmin,
 }) {
+	const { currentUser } = useAuth();
+	const { admin, setAdmin } = useAdmin();
+
+	// admin checking...
+	useEffect(() => {
+		const adminFounder = () => {
+			checkedAdmin.forEach((admin) => {
+				if (admin.email !== currentUser?.email) {
+					return "admin not founded";
+				} else {
+					return "Admin founded";
+				}
+			});
+		};
+		console.log("admin", adminFounder());
+	}, []);
+	// setAdmin({ ...admin, isAdmin: false });
+
 	return (
 		<div>
 			<Head>
