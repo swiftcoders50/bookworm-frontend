@@ -62,21 +62,21 @@ export default function Home({
 }) {
 	const { currentUser } = useAuth();
 	const { admin, setAdmin } = useAdmin();
+	console.log(admin);
+
+	// console.log(checkedAdmin);
 
 	// admin checking...
 	useEffect(() => {
 		const adminFounder = () => {
 			checkedAdmin.forEach((admin) => {
-				if (admin.email !== currentUser?.email) {
-					return "admin not founded";
-				} else {
-					return "Admin founded";
+				if (admin.email === currentUser?.email) {
+					setAdmin({ ...admin, isAdmin: true });
 				}
 			});
 		};
-		console.log("admin", adminFounder());
+		adminFounder();
 	}, []);
-	// setAdmin({ ...admin, isAdmin: false });
 
 	return (
 		<div>

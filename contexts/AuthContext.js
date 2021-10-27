@@ -43,8 +43,9 @@ const AuthProvider = ({ children }) => {
 	};
 
 	// logout user method
-	const logout = () => {
-		return signOut(auth);
+	const logout = async () => {
+		await signOut(auth);
+		window.location.reload();
 	};
 
 	// sent password reset email
